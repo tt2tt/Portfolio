@@ -8,6 +8,7 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
