@@ -16,9 +16,9 @@ class DescribesController < ApplicationController
   end
 
   def create
-    @describe = Describe.new(describe_params)
+    @describe = current_user.describes.build(describe_params)
     if @describe.save
-      redirect_to @describe, notice: '説明を投稿しました。'
+      redirect_to @describe, notice: '説明を投稿しました'
     else
       render :new
     end
@@ -26,7 +26,7 @@ class DescribesController < ApplicationController
 
   def update
     if @describe.update(describe_params)
-      redirect_to @describe, notice: '説明を編集しました。'
+      redirect_to @describe, notice: '説明を編集しました'
     else
       render :edit
     end
