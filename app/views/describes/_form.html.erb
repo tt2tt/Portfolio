@@ -10,6 +10,11 @@
     <%= f.text_field :content %>
   </div>
 
+  <div class="describe_images">
+    <%= f.label :images %>
+    <%= f.file_field :images, multiple: true %>
+  </div>
+
   <%= f.submit %>
 
 <% end %>

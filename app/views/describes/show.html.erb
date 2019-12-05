@@ -1,3 +1,8 @@
 <h1>説明詳細画面</h1>
 <p>タイトル: <%= @describe.title %></p>
 <p>内容: <%= @describe.content %></p>
+<p>
+  <% @describe.images.each do |image| %>
+   <%= image_tag (image.url) if image.url%>
+  <% end %>
+</p>

@@ -40,7 +40,7 @@ class DescribesController < ApplicationController
   private
 
   def describe_params
-    params.require(:describe).permit(:title, :content, :images)
+    params.require(:describe).permit(:title, :content, {images: []})
   end
 
   def set_id
