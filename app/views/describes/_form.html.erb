@@ -1,0 +1,20 @@
+<%= form_with(model: @describe, local: true) do |f| %>
+
+  <div class='describe_title'>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class='describe_content'>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+  </div>
+
+  <div class="describe_images">
+    <%= f.label :images %>
+    <%= f.file_field :images, multiple: true %>
+  </div>
+
+  <%= f.submit %>
+
+<% end %>
