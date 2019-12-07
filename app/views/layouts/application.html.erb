@@ -7,16 +7,27 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://fonts.googleapis.com/css?family=Cherry+Swash:700 rel="stylesheet">
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <%= link_to "説明投稿", describes_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "新規登録", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
-    <% end %>
+    <header>
+      <h1>Brain Share</h1>
+      <div class="nav">
+        <% if user_signed_in? %>
+          <%= link_to "説明投稿", describes_path, class: "left_nav" %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "新規登録", new_user_registration_path, class: "left_nav" %>
+          <%= link_to "ログイン", new_user_session_path %>
+        <% end %>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
     <%= yield %>
+      </div>
+  </div>
   </body>
 </html>

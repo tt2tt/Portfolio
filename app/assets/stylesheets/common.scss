@@ -1,0 +1,22 @@
+header{
+  height: 60px;
+  background-color: #c0c0c0;
+  position: relative;
+}
+header h1{
+  font-family: 'Cherry Swash', cursive;
+  padding-top: 6px;
+  padding-left: 130px;
+  color: #00f;
+  // display: inline;
+  display: inline-block;
+}
+.nav{
+  position:absolute;
+  top: 16px;
+  right: 160px;
+  font-size: 20px;
+}
+.left_nav{
+  padding-right: 40px;
+}
