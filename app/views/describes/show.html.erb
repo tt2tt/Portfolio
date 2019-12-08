@@ -1,8 +1,18 @@
-<h1>説明詳細画面</h1>
-<p>タイトル: <%= @describe.title %></p>
-<p>内容: <%= @describe.content %></p>
-<p>
-  <% @describe.images.each do |image| %>
-   <%= image_tag (image.url) if image.url%>
+<div class="show">
+  <h1><%= @describe.title %></h1>
+  <p>
+    <% @describe.images.each do |image| %>
+     <%= image_tag (image.url) if image.url%>
+    <% end %>
+  </p>
+  <p> <%= @describe.content %></p>
+</div>
+
+<div class="links">
+  <% if user_signed_in? %>
+    <% if current_user.id == @describe.user_id %>
+      <%= link_to 'Edit', edit_describe_path(@describe), class: 'btn btn-info' %> |
+      <%= link_to 'Destroy', @describe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    <% end %>
   <% end %>
-</p>
+</div>

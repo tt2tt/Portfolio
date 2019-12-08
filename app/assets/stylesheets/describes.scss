@@ -1,3 +1,47 @@
 // Place all the styles related to the describes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// form
+.form{
+  margin-top: 50px;
+  margin-left: 170px;
+}
+.title_form{
+  width: 600px;
+}
+.form input[type="text"] {
+  width: 700px;
+  height: 40px;
+}
+.form #describe_content {
+  width: 700px;
+  height: 400px;
+}
+.form input[type="submit"] {
+  width: 700px;
+}
+// index
+.index{
+  margin-top: 30px;
+  margin-left: 20px;
+}
+.search{
+  margin-top: 30px;
+}
+// show
+.show{
+  margin-left: 120px;
+  width: 800px;
+}
+.show p{
+  margin-left: 50px;
+}
+.show img{
+  width: 700px;
+  height: 400px;
+}
+.show h1{
+  margin-top: 10px;
+  margin-left: 50px;
+}
