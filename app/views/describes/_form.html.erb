@@ -1,5 +1,14 @@
 <div class="form">
   <%= form_with(model: @describe, local: true) do |f| %>
+    <% if @describe.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @describe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
     <p class="title_form">
       <%= f.text_field :title, placeholder: "タイトル" %>
