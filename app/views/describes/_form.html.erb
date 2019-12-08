@@ -1,20 +1,18 @@
-<%= form_with(model: @describe, local: true) do |f| %>
+<div class="form">
+  <%= form_with(model: @describe, local: true) do |f| %>
 
-  <div class='describe_title'>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+    <p class="title_form">
+      <%= f.text_field :title, placeholder: "タイトル" %>
+    </p>
 
-  <div class='describe_content'>
-    <%= f.label :content %>
-    <%= f.text_field :content %>
-  </div>
+    <p class="content_form">
+      <%= f.text_area :content, placeholder: "内容" %>
+    </p>
 
-  <div class="describe_images">
-    <%= f.label :images %>
-    <%= f.file_field :images, multiple: true %>
-  </div>
+    <p class="image_form">
+      <%= f.file_field :images, multiple: true %>
+    </p>
 
-  <%= f.submit %>
-
-<% end %>
+    <%= f.submit %>
+  <% end %>
+</div>
