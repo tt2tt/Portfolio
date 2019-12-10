@@ -1,0 +1,20 @@
+// Place all the styles related to the tops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// top
+.top{
+  height: 800px;
+  width: 100%;
+  background-image:  image-url('top.jpg');
+  background-size:  cover;
+}
+.top h1{
+  color: #fff;
+  font-size: 60px;
+  padding-top: 100px;
+  padding-left: 130px;
+}
+.top_nav{
+  margin-left: 170px;
+}

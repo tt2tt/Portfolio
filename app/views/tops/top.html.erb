@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BrainShare</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://fonts.googleapis.com/css?family=Cherry+Swash:700 rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="top">
+      <h1>Brain Share</h1>
+      <div class="top_nav">
+        <%= link_to "新規登録", new_user_registration_path, class: "left_nav" %>
+        <%= link_to "ログイン", new_user_session_path %>
+      </div>
+    </div>
+  </body>
+</html>
