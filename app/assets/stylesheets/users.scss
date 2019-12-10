@@ -4,7 +4,7 @@
 
 // sign_up
 .sign_up{
-  height: 350px;
+  height: 400px;
   width: 300px;
   border: 1px solid #000;
   margin-top: 40px;
@@ -25,4 +25,72 @@
 .reset_form{
   margin-top: 20px;
   margin-left: 60px;
+}
+
+// show
+.my_page{
+width: 600px;
+height: 500px;
+border: 1px solid #000;
+margin-top: 70px;
+margin-left: 270px;
+position: relative;
+}
+.my_page img{
+  height: 250px;
+  width: 250px;
+  border-radius: 250px;
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-bottom: 40px;
+}
+.my_page .user_profile{
+  margin-left: 20px;
+}
+.my_page .my_page_links{
+  position: relative;
+  top: -350px;
+  left: 370px;
+}
+.user_name{
+  display: inline-block;
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
+.user_email{
+  display: inline-block;
+  padding-left: 30px;
+  padding-bottom: 20px;
+}
+.my_page input[type="submit"] {
+  margin-left: 130px;
+}
+
+// edit
+.edit_password{
+  margin-top: 50px;
+  margin-left: 380px;
+}
+.password_form{
+  width: 340px;
+  border: solid 1px #000;
+  margin-top: 20px;
+}
+.password_form p{
+  margin-bottom: 0;
+}
+.password_form label{
+  margin-top: 10px;
+}
+.password_form .field{
+  margin-left: 80px;
+}
+.password_form .actions{
+  margin-top: 20px;
+  margin-left: 130px;
+}
+.password_form .back{
+  margin-top: 10px;
+  margin-left: 145px;
+  margin-bottom: 10px;
 }
