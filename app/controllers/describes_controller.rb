@@ -1,5 +1,6 @@
 class DescribesController < ApplicationController
-  before_action :set_id, only:[:show,:edit,:update,:destroy]
+  before_action :set_id, only:  [:show, :edit, :update, :destroy]
+  # skip_before_action :set_id, only:[:users_index]
 
   def index
     @describes = Describe.all
@@ -35,6 +36,10 @@ class DescribesController < ApplicationController
   def destroy
     @describe.destroy
     redirect_to describes_path, notice: '説明を削除しました'
+  end
+
+  def contributions
+    @describes = current_user.describes
   end
 
   private

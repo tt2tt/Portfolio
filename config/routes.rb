@@ -6,6 +6,12 @@ Rails.application.routes.draw do
     patch 'profile_update', to: 'users/registrations#profile_update', as: 'profile_update'
   end
   resources :describes
+  # resources :describes do
+  #   collection do
+  #     get :contributions
+  #   end
+  # end
+  get :contributions, to: 'describes#contributions'
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"

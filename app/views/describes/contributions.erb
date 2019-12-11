@@ -1,0 +1,11 @@
+<div class="index col-md-7">
+  <% @describes.each do |describe| %>
+    <p>
+      <%= link_to "#{describe.title}", describe, class: 'btn btn-default' %>
+    </p>
+  <% end %>
+</div>
+
+<div class="search col-md-5">
+
+</div>
