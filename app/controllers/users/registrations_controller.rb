@@ -4,14 +4,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
-  # def after_sign_in_path_for(resource)
-  #   describes_path
-  # end
-  #
-  # def after_sign_out_path_for(resource)
-  #   describes_path
-  # end
-
   def my_page
     @user = User.find(params[:id])
   end
@@ -60,10 +52,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   protected
-
-  # def update_resource(resource, params)
-  #   resource.update_without_password(params)
-  # end
 
   def after_update_path_for(resource)
     my_page_path(id: current_user.id)
