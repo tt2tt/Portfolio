@@ -21,7 +21,7 @@ RSpec.describe Describe, type: :model do
     expect(describe).not_to be_valid
   end
 
-  it "条件を守っていればバリテーションが通る" do
+  it "全ての条件を満たしていればバリテーションが通る" do
     describe = current_user.describes.build(title: '仮タイトル', content: '仮コンテント', images: [image])
     expect(describe).to be_valid
   end
