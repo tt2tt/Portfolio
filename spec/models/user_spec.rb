@@ -38,7 +38,7 @@ RSpec.describe User, type: :model do
   end
 
   it '全ての条件を満たしていればバリテーションが通る' do
-    user = User.new(name: '仮ユーザー2', email: 'bbb@bbb.com', password: 'B' * 6, password_confirmation: 'B' * 6, profile_image: '')
+    user = User.new(name: '仮ユーザー', email: 'aaa@aaa.com', password: 'A' * 6, password_confirmation: 'A' * 6, profile_image: '')
     expect(user).to be_valid
   end
 

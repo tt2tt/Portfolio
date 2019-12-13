@@ -33,6 +33,16 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
+  # config.after(:all) do
+  #   if Rails.env.test?
+  #   FileUtils.rm_rf(Rails.root + "public/uploads/tmp/#{Rails.env}/")
+  #  end
+  # end
+  config.after(:all) do
+    if Rails.env.test?
+      FileUtils.rm_rf(Dir["#{Rails.root}/public/uploads/tmp/"])
+    end
+  end
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
