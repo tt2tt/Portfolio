@@ -3,7 +3,7 @@ class DescribesController < ApplicationController
   # skip_before_action :set_id, only:[:users_index]
 
   def index
-    @describes = Describe.all
+    @describes = @q.result
   end
 
   def new
@@ -39,7 +39,8 @@ class DescribesController < ApplicationController
   end
 
   def contributions
-    @describes = current_user.describes
+    @q = current_user.describes.ransack(params[:q])
+    @describes = @q.result
   end
 
   private

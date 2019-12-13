@@ -6,6 +6,10 @@ class Describe < ApplicationRecord
 
   mount_uploaders :images, ImageUploader
 
+ ransacker :images do
+    |parent| Arel::Nodes::InfixOperation.new('->', parent.table[:json_column], 'images')
+  end
+  
   private
 
   def content_or_images
