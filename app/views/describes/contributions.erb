@@ -7,5 +7,10 @@
 </div>
 
 <div class="search col-md-5">
+  <%= search_form_for @q, url: contributions_path do |f| %>
+    <%= f.label :title %>
+    <%= f.search_field :title_cont %>
 
+    <%= f.submit "検索" %>
+  <% end %>
 </div>

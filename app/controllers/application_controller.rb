@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_search, except: :contributions
 
   def after_sign_in_path_for(resource)
     describes_path
@@ -8,6 +9,10 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource)
     describes_path
   end
+
+  def set_search
+  @q = Describe.ransack(params[:q])
+end
 
   protected
 
