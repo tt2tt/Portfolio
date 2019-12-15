@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :describes
+  has_many :likes, dependent: :destroy
 
   validates :name, presence: true
 
