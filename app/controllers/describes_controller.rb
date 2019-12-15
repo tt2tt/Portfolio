@@ -11,6 +11,7 @@ class DescribesController < ApplicationController
   end
 
   def show
+    @like = current_user.likes.find_by(describe_id: @describe.id)
   end
 
   def edit
