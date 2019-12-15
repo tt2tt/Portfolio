@@ -16,3 +16,11 @@
     <% end %>
   <% end %>
 </div>
+
+<% unless @describe.user_id == current_user.id %>
+  <% if @like.present? %>
+    <%= link_to 'お気に入り解除する', like_path(id: @like.id), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to 'お気に入りする', likes_path(describe_id: @describe.id), method: :post, class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
