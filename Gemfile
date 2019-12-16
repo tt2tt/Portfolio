@@ -12,6 +12,7 @@ gem 'devise'
 gem 'letter_opener_web'
 gem 'faker'
 gem 'ransack'
+gem 'counter_culture'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
