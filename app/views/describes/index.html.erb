@@ -1,7 +1,7 @@
 <div class="index col-md-7">
   <% @describes.each do |describe| %>
     <p>
-      <%= link_to "#{describe.title}", describe, class: 'btn btn-default' %>
+      <%= link_to "#{describe.title}", describe, class: 'btn btn-default' %><%= describe.likes_count %>
     </p>
   <% end %>
 </div>
