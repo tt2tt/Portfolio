@@ -4,17 +4,96 @@
 
 // top
 .top{
-  height: 800px;
+  background-color: #000;
+  height: 3700px;
+}
+.title{
+  height: 900px;
   width: 100%;
   background-image:  image-url('top.jpg');
   background-size:  cover;
 }
-.top h1{
+.title h1{
   color: #fff;
-  font-size: 60px;
-  padding-top: 100px;
-  padding-left: 130px;
+  font-size: 80px;
+  padding-top: 80px;
+  padding-left: 180px;
+}
+.catch{
+  color: #fff;
+  padding-top: 50px;
+  padding-left: 240px;
+}
+.catch h2{
+  font-size: 40px;
+  margin-bottom: 20px;
 }
 .top_nav{
-  margin-left: 170px;
+  margin-top: 60px;
+  margin-left: 250px;
+}
+.title .left_nav{
+  padding-right: 12px;
+  margin-right: 50px;
+}
+.describe{
+  margin-top: 50px;
+  margin-left: 240px;
+  background-image: image-url('describe.jpg');
+  background-size: cover;
+  background-position: center center;
+  height: 600px;
+  width: 1000px;
+}
+.like{
+  margin-top: 50px;
+  margin-left: 240px;
+  background-image: image-url('like.jpg');
+  background-size: cover;
+  background-position: center center;
+  height: 600px;
+  width: 1000px;
+}
+.grow{
+  margin-top: 50px;
+  margin-left: 240px;
+  background-image: image-url('grow.jpg');
+  background-size: cover;
+  background-position: center center;
+  height: 600px;
+  width: 1000px;
+}
+.question{
+  margin-top: 50px;
+  margin-left: 240px;
+  background-image: image-url('question.jpg');
+  background-size: cover;
+  background-position: center center;
+  height: 600px;
+  width: 1000px;
+}
+.caption {
+	font-size: 130%;
+	color: #fff;
+	padding-top: 80px;
+}
+.mask {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.4);
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	-webkit-transform:	scale(0);
+	transform: scale(0);
+}
+.app_describe:hover .mask {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+.inside_link{
+  font-size: 60px;
+  margin-top: 40px;
+  margin-left: 590px;
 }
