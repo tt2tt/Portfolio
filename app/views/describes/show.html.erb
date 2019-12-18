@@ -17,6 +17,12 @@
   <% end %>
 </div>
 
+<div id="comments_area">
+  <%= render partial: 'comments/index', locals: { comments: @comments, describe: @describe } %>
+</div>
+
+<%= render partial: 'comments/form', locals: { comment: @comment, describe: @describes } %>
+
 <% unless @describe.user_id == current_user.id %>
   <% if @like.present? %>
     <%= link_to 'お気に入り解除する', like_path(id: @like.id), method: :delete, class: 'btn btn-danger' %>
