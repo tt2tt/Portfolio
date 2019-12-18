@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   # end
   get :contributions, to: 'describes#contributions'
   resources :likes, only: [:create, :destroy]
+  resources :describes do
+    resources :comments
+  end
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
