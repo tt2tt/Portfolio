@@ -13,11 +13,58 @@
 
   <body>
     <div class="top">
-      <h1>Brain Share</h1>
-      <div class="top_nav">
-        <%= link_to "新規登録", new_user_registration_path, class: "left_nav" %>
-        <%= link_to "ログイン", new_user_session_path %>
+      <div class="title">
+        <h1 id="links">Brain Share</h1>
+        <div class="catch">
+          <h2>思考をシェアする</h2>
+          <h2>思考を手にする</h2>
+        </div>
+        <div class="top_nav" >
+          <%= link_to "新規登録", new_user_registration_path, class: "left_nav btn btn-info" %>
+          <%= link_to "ログイン", new_user_session_path, class: "btn btn-success" %>
+        </div>
       </div>
+
+     <div class='app_describe describe'>
+       <div class="mask">
+         <p class="caption text-center">説明を投稿する</p>
+         <div class="caption text-center">
+           学んだことを誰かに説明するつもりで投稿しよう<br>
+           まとめる過程で内容が定着する！
+         </div>
+       </div>
+     </div>
+
+     <div class='app_describe like'>
+       <div class="mask">
+         <p class="caption text-center">フィードバックを受け取る</p>
+         <div class="caption text-center">
+           いいねやコメントを受け取ろう<br>
+           客観的な評価から理解が甘い場所に気づくことができる！
+         </div>
+       </div>
+     </div>
+
+     <div class='app_describe grow'>
+       <div class="mask">
+         <p class="caption text-center">説明を更新する</p>
+         <div class="caption text-center">
+           フィードバックを元に説明を更新しよう<br>
+           どんどん理解が深まり内容が定着する！
+         </div>
+       </div>
+     </div>
+
+     <div class='app_describe question'>
+       <div class="mask">
+         <p class="caption text-center">説明を検索する</p>
+         <div class="caption text-center">
+           分からないことを検索しよう<br>
+           色々な人の説明から自分に合う解釈を見つけられる
+         </div>
+       </div>
+     </div>
+      <p class="inside_link"><%= link_to "さぁ始めよう", { anchor: "links" } %></p>
     </div>
   </body>
 </html>
