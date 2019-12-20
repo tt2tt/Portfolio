@@ -1,9 +1,10 @@
 class DescribesController < ApplicationController
   before_action :set_id, only:  [:show, :edit, :update, :destroy]
-  # skip_before_action :set_id, only:[:users_index]
+
+  PER = 20
 
   def index
-    @describes = @q.result
+    @describes = @q.result.page(params[:page]).per(PER)
   end
 
   def new
@@ -43,7 +44,7 @@ class DescribesController < ApplicationController
 
   def contributions
     @q = current_user.describes.ransack(params[:q])
-    @describes = @q.result
+    @describes = @q.result.page(params[:page]).per(PER)
   end
 
   private
