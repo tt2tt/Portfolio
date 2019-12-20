@@ -13,6 +13,7 @@ gem 'letter_opener_web'
 gem 'faker'
 gem 'ransack'
 gem 'counter_culture'
+gem 'kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
