@@ -24,24 +24,156 @@
 // index
 .index{
   margin-top: 30px;
-  margin-left: 20px;
+  margin-left: 200px;
+}
+.index .contribution{
+  border: 1px solid #000;
+  margin: 10px;
+  background-color: #fff;
+}
+.index .link{
+  top: 0px;
+  left: 0px;
+  width: 200px;
+  height: 50px;
+  color:  #000;
+  text-decoration: none;
 }
 .search{
   margin-top: 30px;
 }
+.index a{
+  margin-bottom: 0;
+}
+.index p{
+  width: 700px;
+  word-wrap: break-word;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+.index img{
+  width: 30px;
+  height: 30px;
+}
+.index i{
+  margin-left: 10px;
+}
 // show
 .show{
+  margin-top: 50px;
   margin-left: 120px;
-  width: 800px;
+  width: 860px;
+  border: 1px solid #000;
+  background-image: image-url('height.jpg');
+  position: absolute;
 }
 .show p{
-  margin-left: 50px;
+  width: 760px;
+  word-wrap: break-word;
+  position: relative;
 }
-.show img{
-  width: 700px;
+ .show .slider img{
+  width: 700px!important;
   height: 400px;
 }
 .show h1{
   margin-top: 10px;
   margin-left: 50px;
+  width: 760px;
+  word-wrap: break-word;
+  background-color: #fff;
+}
+.show .main{
+  background-color: #fff;
+  margin-left: 50px;
+}
+#comments_area{
+  margin-top: 10px;
+  margin-left: 50px;
+  width: 760px;
+  background-color: #fff;
+}
+ .links{
+   position: relative;
+   top: 60px;
+   left: 1000px;
+}
+#like_area{
+  position: relative;
+  top: 60px;
+  left: 1020px;
+}
+.show .slick-prev:before{
+  color: #000;
+  margin-left: 50px;
+}
+.show .slick-next:before{
+  color: #000;
+  margin-left: -100px;
+}
+.show .slick-dots{
+  margin-left: -40px;
+}
+.show .field{
+  display: inline-block;
+  margin-left: 240px;
+}
+.show textarea{
+  height: 200px;
+  width: 400px;
+  margin-top: 20px;
+}
+.show input[type="submit"] {
+  width: 200px;
+  margin-left: 330px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+// contribution
+.my_index{
+  margin-top: 30px;
+}
+.my_index .contribution{
+  border: 1px solid #000;
+  margin: 10px;
+  background-color: #fff;
+}
+.my_index .link{
+  top: 0px;
+  left: 0px;
+  width: 200px;
+  height: 50px;
+  color:  #000;
+  text-decoration: none;
+}
+.my_index a{
+  margin-bottom: 0;
+}
+.my_index p{
+  width: 700px;
+  word-wrap: break-word;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+.my_index img{
+  width: 30px;
+  height: 30px;
+}
+.my_index i{
+  margin-left: 10px;
+}
+.my_serach{
+  display: inline-block;
+  height: 200px;
+  border: 1px solid #000;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+.my_serach .search_icon{
+  margin-left: 220px;
+  margin-bottom: 30px;
+}
+.my_serach input[type="search"] {
+  margin-top: 30px;
+  margin-left: 20px;
 }

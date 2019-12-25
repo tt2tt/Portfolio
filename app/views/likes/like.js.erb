@@ -1,0 +1,2 @@
+$("#like_area").html("<%= j(render 'likes/like', { like: @like, describe: @describe, user_id: current_user.id }) %>")
+$("textarea").val('')

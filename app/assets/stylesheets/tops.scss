@@ -5,10 +5,10 @@
 // top
 .top{
   background-color: #000;
-  height: 3700px;
+  height: 3150px;
 }
 .title{
-  height: 900px;
+  height: 750px;
   width: 100%;
   background-image:  image-url('top.jpg');
   background-size:  cover;
@@ -36,13 +36,30 @@
   padding-right: 12px;
   margin-right: 50px;
 }
+.arrow{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 5px solid;
+  border-color:  transparent transparent #fff #fff;
+  transform: rotate(-45deg);
+}
+.left_arrow{
+  margin-left: 100px;
+}
+.middle_arrow{
+  margin-left: 550px;
+}
+.right_arrow{
+  margin-left: 570px;
+}
 .describe{
   margin-top: 50px;
   margin-left: 240px;
   background-image: image-url('describe.jpg');
   background-size: cover;
   background-position: center center;
-  height: 600px;
+  height: 500px;
   width: 1000px;
 }
 .like{
@@ -51,7 +68,7 @@
   background-image: image-url('like.jpg');
   background-size: cover;
   background-position: center center;
-  height: 600px;
+  height: 500px;
   width: 1000px;
 }
 .grow{
@@ -60,7 +77,7 @@
   background-image: image-url('grow.jpg');
   background-size: cover;
   background-position: center center;
-  height: 600px;
+  height: 500px;
   width: 1000px;
 }
 .question{
@@ -69,7 +86,7 @@
   background-image: image-url('question.jpg');
   background-size: cover;
   background-position: center center;
-  height: 600px;
+  height: 500px;
   width: 1000px;
 }
 .caption {

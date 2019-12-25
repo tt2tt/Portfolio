@@ -1,3 +1,6 @@
+body{
+  background-color: #eee;
+}
 header{
   height: 60px;
   background-color: #c0c0c0;
@@ -18,4 +21,12 @@ header h1{
 }
 .left_nav{
   padding-right: 40px;
+}
+.search{
+  position:absolute;
+  top: -10px;
+  left: 480px;
+}
+input[type="search"] {
+  width: 200px;
 }
