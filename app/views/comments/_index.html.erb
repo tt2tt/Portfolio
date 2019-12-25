@@ -1,9 +1,6 @@
-<ul>
-  <% comments.each do |comment| %>
-    <% if comment.id.present? %>
-      <li>
-        <p><%= comment.content %></p>
-      </li>
-    <% end %>
+<h3>コメント一覧</h3>
+<% comments.each do |comment| %>
+  <% if comment.id.present? %>
+    <p><%= comment.content %></p>
   <% end %>
-</ul>
+<% end %>

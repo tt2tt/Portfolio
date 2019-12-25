@@ -8,12 +8,28 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+    <script src="https://kit.fontawesome.com/2fc286bd30.js" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Cherry+Swash:700 rel="stylesheet">
   </head>
 
   <body>
     <header>
       <h1><%= link_to "Brain Share", describes_path %></h1>
+
+      <div class="search">
+        <%= search_form_for @q do |f| %>
+          <%= f.search_field :title_cont %>
+
+          <%= button_tag type: "submit", class: "search_iconr" do %>
+            <i class="fa fa-search"></i>
+          <% end %>
+        <% end %>
+      </div>
+
       <div class="nav">
         <% if user_signed_in? %>
           <%= link_to "説明投稿", new_describe_path, class: "left_nav" %>

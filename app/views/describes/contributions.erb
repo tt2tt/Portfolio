@@ -1,17 +1,26 @@
-<div class="index col-md-7">
+<div class="my_index">
   <% @describes.each do |describe| %>
-    <p>
-      <%= link_to "#{describe.title}", describe, class: 'btn btn-default' %>
-    </p>
+   <div class="contribution">
+     <%= link_to describe, class: "link"  do%>
+       <p>
+         <%= image_tag describe.user.profile_image.url %>
+         <%= describe.user.name %>
+         <i class="fas fa-heart" style="color:red"></i> <%= describe.likes_count %>
+       </p>
+       <p>
+         <%= describe.title %>
+       </p>
+     <% end %>
+  </div>
   <% end %>
-  <%= paginate @describes %>
 </div>
+<div class="my_serach">
+  <h3>自分の説明を検索する</h3>
+  <%= search_form_for @my_q, url: contributions_path do |f| %>
+    <p><%= f.search_field :title_cont %></p>
 
-<div class="search col-md-5">
-  <%= search_form_for @q, url: contributions_path do |f| %>
-    <%= f.label :title %>
-    <%= f.search_field :title_cont %>
-
-    <%= f.submit "検索" %>
+    <%= button_tag type: "submit", class: "search_icon" do %>
+      <i class="fa fa-search"></i>
+    <% end %>
   <% end %>
 </div>

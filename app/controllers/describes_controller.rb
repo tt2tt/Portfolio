@@ -12,9 +12,12 @@ class DescribesController < ApplicationController
   end
 
   def show
-    @like = current_user.likes.find_by(describe_id: @describe.id)
+    if user_signed_in?
+     @like = current_user.likes.find_by(describe_id: @describe.id)
+     @comment = current_user.comments.build
+   end
     @comments = @describe.comments
-    @comment = current_user.comments.build
+    @comment = Comment.new
   end
 
   def edit
@@ -43,8 +46,8 @@ class DescribesController < ApplicationController
   end
 
   def contributions
-    @q = current_user.describes.ransack(params[:q])
-    @describes = @q.result.page(params[:page]).per(PER)
+    @my_q = current_user.describes.ransack(params[:q])
+    @describes = @my_q.result.page(params[:page]).per(PER)
   end
 
   private
