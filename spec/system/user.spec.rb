@@ -82,4 +82,8 @@ RSpec.feature 'ユーザー管理機能', type: :feature do
     expect(page).to have_content 'ログアウト'
   end
 
+  scenario 'パスワードを忘れた場合のメール機能のテスト' do
+    
+  end
+
 end

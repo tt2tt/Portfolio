@@ -97,3 +97,16 @@ position: relative;
   margin-left: 145px;
   margin-bottom: 10px;
 }
+
+// password_new
+.password_reset{
+  height: 200px;
+  margin-top: 130px;
+}
+.password_reset .field{
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.password_reset .actions input[type="submit"] {
+  margin-left: -30px;
+}
