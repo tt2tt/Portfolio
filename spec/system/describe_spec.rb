@@ -1,16 +1,18 @@
 require 'rails_helper'
+include WaitForAjax
+# include AjaxHelper
 
 RSpec.feature '説明管理機能', type: :feature do
   background do
     user = FactoryBot.create(:user)
     user2 = FactoryBot.create(:second_user)
-    FactoryBot.create(:describe, user: user)
+    describe = FactoryBot.create(:describe, user: user)
     FactoryBot.create(:second_describe, user: user2)
 
     visit new_user_session_path
     fill_in 'メールアドレス', with: 'aaa@aaa.com'
     fill_in 'パスワード', with: 'AAAAAA'
-    click_button 'Log in'
+    click_button 'ログイン'
   end
 
   scenario '説明の一覧機能のテスト' do
@@ -36,7 +38,7 @@ RSpec.feature '説明管理機能', type: :feature do
 
   scenario '説明の編集機能のテスト' do
     click_link  '仮タイトル'
-    click_link 'Edit'
+    click_link '編集'
     fill_in 'タイトル', with: '新規説明'
     fill_in '内容', with: '新規説明'
 
@@ -47,7 +49,7 @@ RSpec.feature '説明管理機能', type: :feature do
 
   scenario '説明の削除機能のテスト' do
     click_link  '仮タイトル'
-    click_link  'Destroy'
+    click_link  '削除'
 
     expect(page).not_to have_content '仮タイトル'
   end
@@ -63,8 +65,36 @@ RSpec.feature '説明管理機能', type: :feature do
   scenario '説明の操作制限のテスト'  do
     click_link  '仮説明'
 
-    expect(page).not_to have_content 'Edit'
-    expect(page).not_to have_content 'Destroy'
+    expect(page).not_to have_content '編集'
+    expect(page).not_to have_content '削除'
   end
 
+  # scenario 'いいね機能のテスト', js: true  do
+  #   click_link  '仮説明'
+  #   find 'いいね'.click
+  #   # find '#like_area'.click
+  #   # click_on 'unhurt'
+  #   # click_on "0"
+  #   # save_and_open_page
+  #   # find '#unhurt'.on
+  #   # click_link "#unhurt"
+  #   # click_link '#like_area'
+  #   # find '#unhurt'.trigger("click")
+  #   # click_link '0'
+  #   # find('0').click
+  #   # save_and_open_page
+  #   # find('unhurt')
+  #   # find("unhurt", visible: false).trigger("click")
+  #
+  #
+  #   expect(page).to have_content '1'
+  # end
+
+  # scenario 'コメント機能のテスト', js: true   do
+  #   click_link  '仮説明'
+  #   fill_in 'comment_content', with: '仮コメント'
+  #   click_button  'コメントする'
+  #
+  #   expect(page).not_to have_content '仮コメント'
+  # end
 end

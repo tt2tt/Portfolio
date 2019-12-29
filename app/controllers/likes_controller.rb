@@ -1,6 +1,5 @@
 class LikesController < ApplicationController
   def create
-
     if @like = current_user.likes.create(describe_id: params[:describe_id])
       @describe = Describe.find(params[:describe_id])
       respond_to do |format|
