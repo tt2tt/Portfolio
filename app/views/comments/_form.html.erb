@@ -11,10 +11,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.text_area :content %>
+    <% next_count = @describe.comments_count %>
+    <%= f.hidden_field :comment_number, value: "#{next_count}", id: "count_form" %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :reply_comment_id, value: "", id: "reply_form" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :content, id: "comment_form"  %>
   </div>
 
   <div class="actions">
-    <%= f.submit "コメントする"%>
+    <%= f.submit "コメントする", id: "comment_submit"%>
   </div>
 <% end %>

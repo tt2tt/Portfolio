@@ -16,7 +16,8 @@ class DescribesController < ApplicationController
      @like = current_user.likes.find_by(describe_id: @describe.id)
      @comment = current_user.comments.build
    end
-    @comments = @describe.comments
+    @comments = @describe.comments.where(reply_comment_id: nil)
+    # binding.pry
     @comment = Comment.new
   end
 

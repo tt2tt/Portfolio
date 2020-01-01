@@ -1,6 +1,12 @@
 <h3>コメント一覧</h3>
 <% comments.each do |comment| %>
   <% if comment.id.present? %>
+  <p><%= comment.comment_number %></p><%= link_to "返信する", { anchor: "comment_form" }, class: "reply", id: "#{comment.comment_number} #{comment.id}" %>
     <p><%= comment.content %></p>
+    <% if comment.replies[0] %>
+      <% comment.replies.each do |reply| %>
+        <p><%= reply.content %></p>
+      <% end %>
+    <% end %>
   <% end %>
 <% end %>

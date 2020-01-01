@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.js { render :index }
-        CommentMailer.comment_mail(current_user.email, @describe.title).deliver
+        # CommentMailer.comment_mail(current_user.email, @describe.title).deliver
       else
         format.html { redirect_to describe_path(@describes), notice: '投稿できませんでした' }
       end
@@ -16,6 +16,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:describe_id, :content)
+    params.require(:comment).permit(:describe_id, :content, :comment_number, :reply_comment_id)
   end
 end
