@@ -1,13 +1,12 @@
 class DescribesController < ApplicationController
   before_action :set_id, only:  [:show, :edit, :update, :destroy]
 
-  PER = 20
-
   def index
-    @describes = @q.result.page(params[:page]).per(PER)
+    @describes = @q.result.where(original_id: nil).page(params[:page]).per(20)
   end
 
   def new
+    @original_id = params[:original]
     @describe = Describe.new
   end
 
@@ -17,8 +16,9 @@ class DescribesController < ApplicationController
      @comment = current_user.comments.build
    end
     @comments = @describe.comments.where(reply_comment_id: nil)
-    # binding.pry
     @comment = Comment.new
+    all_describes = @describe.update_describes.reverse.push(@describe)
+    @all_describes = Kaminari.paginate_array(all_describes).page(params[:page]).per(1)
   end
 
   def edit
@@ -48,13 +48,13 @@ class DescribesController < ApplicationController
 
   def contributions
     @my_q = current_user.describes.ransack(params[:q])
-    @describes = @my_q.result.page(params[:page]).per(PER)
+    @describes = @my_q.result.where(original_id: nil).page(params[:page]).per(20)
   end
 
   private
 
   def describe_params
-    params.require(:describe).permit(:title, :content, {images: []})
+    params.require(:describe).permit(:title, :content, {images: []}, :original_id)
   end
 
   def set_id

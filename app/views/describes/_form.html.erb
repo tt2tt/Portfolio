@@ -10,6 +10,12 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <% if @original_id %>
+      <%= f.hidden_field :original_id, value: "#{@original_id}" %>
+    <% end %>
+  </div>
+
     <p class="title_form">
       <%= f.text_field :title, placeholder: "タイトル" %>
     </p>

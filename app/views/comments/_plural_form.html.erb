@@ -1,0 +1,29 @@
+<%= form_with(model: [describe, comment]) do |f| %>
+  <% if comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <ul>
+      <% comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <% next_count = describe.comments_count %>
+    <%= f.hidden_field :comment_number, value: "#{next_count}", id: "count_form" %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :reply_comment_id, value: "", id: "reply_form" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :content, id: "comment_form"  %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "コメントする", id: "comment_submit"%>
+  </div>
+<% end %>
