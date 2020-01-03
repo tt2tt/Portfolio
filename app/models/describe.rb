@@ -1,5 +1,6 @@
 class Describe < ApplicationRecord
   belongs_to :user
+  has_many :update_describes, class_name: 'Describe', foreign_key: :original_id, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 

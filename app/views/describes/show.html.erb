@@ -1,30 +1,5 @@
-<div class="show">
-  <h1><%= @describe.title %></h1>
-  <ul class="slider">
-    <% @describe.images.each do |image| %>
-      <ul class="slider">
-        <%= image_tag (image.url) if image.url%>
-      </ul>
-    <% end %>
-  </ul>
-  <p class="main"> <%= @describe.content %></p>
-
-  <div id="comments_area">
-    <%= render partial: 'comments/index', locals: { comments: @comments, describe: @describe } %>
-  </div>
-
-  <%= render partial: 'comments/form', locals: { comment: @comment, describe: @describes } %>
-</div>
-
-<div id="like_area" class="likes">
-  <%= render partial: 'likes/like', locals: { like: @like, describe: @describe } %>
-</div>
-
-<div class="links">
-  <% if user_signed_in? %>
-    <% if current_user.id == @describe.user_id %>
-      <%= link_to '編集', edit_describe_path(@describe), class: 'btn btn-info' %>
-      <%= link_to '削除', @describe, method: :delete, data: { confirm: '本当に削除しますか' }, class: 'btn btn-danger' %>
-    <% end %>
-  <% end %>
-</div>
+<% if @describe.update_describes[0] %>
+  <%= render  'plural' %>
+<% else %>
+  <%= render  'single' %>
+<% end %>
