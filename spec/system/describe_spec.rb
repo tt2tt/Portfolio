@@ -69,32 +69,18 @@ RSpec.feature '説明管理機能', type: :feature do
     expect(page).not_to have_content '削除'
   end
 
-  # scenario 'いいね機能のテスト', js: true  do
-  #   click_link  '仮説明'
-  #   find 'いいね'.click
-  #   # find '#like_area'.click
-  #   # click_on 'unhurt'
-  #   # click_on "0"
-  #   # save_and_open_page
-  #   # find '#unhurt'.on
-  #   # click_link "#unhurt"
-  #   # click_link '#like_area'
-  #   # find '#unhurt'.trigger("click")
-  #   # click_link '0'
-  #   # find('0').click
-  #   # save_and_open_page
-  #   # find('unhurt')
-  #   # find("unhurt", visible: false).trigger("click")
-  #
-  #
-  #   expect(page).to have_content '1'
-  # end
+  scenario 'いいね機能のテスト', js: true  do
+    click_link  '仮説明'
+    click_link  '#unhurt'
 
-  # scenario 'コメント機能のテスト', js: true   do
-  #   click_link  '仮説明'
-  #   fill_in 'comment_content', with: '仮コメント'
-  #   click_button  'コメントする'
-  #
-  #   expect(page).not_to have_content '仮コメント'
-  # end
+    expect(page).to have_content '1'
+  end
+
+  scenario 'コメント機能のテスト', js: true   do
+    click_link  '仮説明'
+    fill_in 'comment_form', with: '仮コメント'
+    click_button  'コメントする'
+
+    expect(page).not_to have_content '仮コメント'
+  end
 end
