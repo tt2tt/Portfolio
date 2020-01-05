@@ -1,3 +1,47 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#comments_area{
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+#comments_area .call_count1{
+  border-left: 0px solid #000;
+}
+#comments_area .call_count2{
+  margin-left: 10px;
+}
+#comments_area .call_count3{
+  margin-left: 20px;
+}
+#comments_area .call_count4{
+  margin-left: 30px;
+}
+#comments_area .call_count5{
+  margin-left: 40px;
+}
+#comments_area .call_count6{
+  margin-left: 50px;
+}
+.comment{
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+.comment_user{
+  color: #008000;
+}
+.reply{
+  pointer-events: none;
+}
+// .reply.disabled{
+//   pointer-events: none;
+// }
+.detail{
+  margin-bottom: 0;
+}
+
+.click{
+  cursor: pointer;
+}

@@ -31,13 +31,13 @@ ActiveRecord::Schema.define(version: 2020_01_02_064755) do
     t.string "title"
     t.text "content"
     t.json "images"
-    t.boolean "is_updated", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.integer "likes_count", default: 0, null: false
     t.integer "comments_count", default: 0, null: false
     t.integer "original_id"
+    t.boolean "is_updated"
     t.index ["user_id"], name: "index_describes_on_user_id"
   end
 
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 2020_01_02_064755) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.string "profile_image"
+    t.string "prfile_image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

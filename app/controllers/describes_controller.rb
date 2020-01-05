@@ -2,11 +2,13 @@ class DescribesController < ApplicationController
   before_action :set_id, only:  [:show, :edit, :update, :destroy]
 
   def index
-    @describes = @q.result.where(original_id: nil).page(params[:page]).per(20)
+    @describes = @q.result.where(original_id: nil).page(params[:page]).per(10)
   end
 
   def new
-    @original_id = params[:original]
+    if params[:original]
+      @original = Describe.find(params[:original])
+    end
     @describe = Describe.new
   end
 
@@ -27,7 +29,12 @@ class DescribesController < ApplicationController
   def create
     @describe = current_user.describes.build(describe_params)
     if @describe.save
-      redirect_to @describe, notice: '説明を投稿しました'
+      if @describe.original_id
+        @original = Describe.find(@describe.original_id)
+        redirect_to @original, notice: '説明を更新しました'
+      else
+        redirect_to @describe, notice: '説明を投稿しました'
+      end
     else
       render :new
     end
@@ -35,7 +42,12 @@ class DescribesController < ApplicationController
 
   def update
     if @describe.update(describe_params)
-      redirect_to @describe, notice: '説明を編集しました'
+      if @describe.original_id
+        @original = Describe.find(@describe.original_id)
+        redirect_to @original, notice: '説明を編集しました'
+      else
+        redirect_to @describe, notice: '説明を編集しました'
+      end
     else
       render :edit
     end
@@ -48,7 +60,7 @@ class DescribesController < ApplicationController
 
   def contributions
     @my_q = current_user.describes.ransack(params[:q])
-    @describes = @my_q.result.where(original_id: nil).page(params[:page]).per(20)
+    @describes = @my_q.result.where(original_id: nil).page(params[:page]).per(10)
   end
 
   private

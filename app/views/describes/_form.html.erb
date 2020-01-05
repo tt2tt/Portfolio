@@ -11,13 +11,21 @@
   <% end %>
 
   <div class="field">
-    <% if @original_id %>
-      <%= f.hidden_field :original_id, value: "#{@original_id}" %>
+    <% if @original %>
+      <%= f.hidden_field :original_id, value: "#{@original.id}" %>
     <% end %>
   </div>
 
     <p class="title_form">
-      <%= f.text_field :title, placeholder: "タイトル" %>
+      <% if @original %>
+        <%= f.text_field :title, value: "#{@original.title}", readonly: true %>
+      <% else %>
+        <% if @describe.original_id %>
+          <%= f.text_field :title, readonly: true %>
+        <% else %>
+          <%= f.text_field :title, placeholder: "タイトル" %>
+        <% end %>
+      <% end %>
     </p>
 
     <p class="content_form">

@@ -1,2 +1,2 @@
-$("#comments_area").html("<%= j(render 'comments/index', { comments: @comment.describe.comments, describe: @comment.describe }) %>")
+$("#comments_area").html("<%= j(render 'comments/index', { comments: @comment.describe.comments.where(reply_comment_id: nil), describe: @comment.describe }) %>")
 $("textarea").val('')
