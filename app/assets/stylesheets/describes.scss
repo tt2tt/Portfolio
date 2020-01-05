@@ -23,7 +23,7 @@
 }
 // index
 .index{
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: 200px;
 }
 .index .contribution{
@@ -57,6 +57,13 @@
 }
 .index i{
   margin-left: 10px;
+}
+.index .pages{
+  width: 200px;
+  margin-left: 310px;
+}
+.index .page{
+  padding: 0 5px;
 }
 // show
 .show{
@@ -129,9 +136,17 @@
   margin-top: 20px;
   margin-bottom: 50px;
 }
+.show .pages{
+  background-color:  #fff;
+  width: 200px;
+  margin-left: 335px;
+}
+.show .page{
+  padding: 0 5px;
+}
 // contribution
 .my_index{
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .my_index .contribution{
   border: 1px solid #000;
@@ -145,6 +160,9 @@
   height: 50px;
   color:  #000;
   text-decoration: none;
+}
+.my_index .page{
+  padding: 0 5px;
 }
 .my_index a{
   margin-bottom: 0;
@@ -161,6 +179,10 @@
 }
 .my_index i{
   margin-left: 10px;
+}
+.my_index .pages{
+  width: 200px;
+  margin-left: 335px;
 }
 .my_serach{
   display: inline-block;

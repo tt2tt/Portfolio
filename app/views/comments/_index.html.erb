@@ -1,12 +1,55 @@
-<h3>コメント一覧</h3>
-<% comments.each do |comment| %>
-  <% if comment.id.present? %>
-  <p><%= comment.comment_number %></p><%= link_to "返信する", { anchor: "comment_form" }, class: "reply", id: "#{comment.comment_number} #{comment.id}" %>
-    <p><%= comment.content %></p>
-    <% if comment.replies[0] %>
-      <% comment.replies.each do |reply| %>
-        <p><%= reply.content %></p>
+<% call_count = 0 %>
+<h3 for="toggle">コメント一覧</h3>
+<% def comments_replys(comments, call_count) %>
+  <% call_count = call_count + 1 %>
+  <% comments.each do |comment| %>
+    <% if comment.id.present? %>
+      <% unless comment.reply_comment_id %>
+        <% call_count = 1 %>
       <% end %>
+      <div class="comment">
+      <p class="detail">
+        <%= comment.comment_number %>. <span class="comment_user"><%= comment.user.name %></span>
+        <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+        <span class="click">
+          <%= link_to "返信する", { anchor: "comment_form" }, class: "reply call#{call_count}", id: "#{comment.comment_number} #{comment.id}" %>
+        </span>
+      </p>
+      <p class="comment_content"><%= safe_join("#{comment.content}".split("\n"),tag(:br)) %></p>
+
+     </div>
+    <% if comment.replies[0] %>
+
+      <% call_count = call_count + 1 %>
+      <% decrement_count = call_count -1 %>
+      <% comment.replies.each do |reply| %>
+        <div class="comment">
+          <p class="detail">
+            <%= reply.comment_number %>. <span class="comment_user"><%= reply.user.name %></span>
+            <%= reply.created_at.strftime('%Y/%m/%d %H:%M') %>
+            <span class="click">
+              <%= link_to "返信する", { anchor: "comment_form" }, class: "reply call#{call_count}", id:
+             "#{reply.comment_number} #{reply.id}" %>
+            </span>
+        </p>
+        <p><%= safe_join("#{reply.content}".split("\n"),tag(:br)) %></p>
+        </div>
+        <% if reply.replies[0] %>
+
+          <% comments_replys(reply.replies, call_count) %>
+        <% else %>
+          <% call_count -1 %>
+        <% end %>
+
+      <% end %>
+
+    <% else %>
+      <% call_count = 1 %>
     <% end %>
+
+
   <% end %>
 <% end %>
+<% end%>
+
+<% comments_replys(comments, call_count) %>

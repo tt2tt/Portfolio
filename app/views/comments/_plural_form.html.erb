@@ -10,7 +10,7 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="hidden_field">
     <% next_count = describe.comments_count %>
     <%= f.hidden_field :comment_number, value: "#{next_count}", id: "count_form" %>
   </div>
