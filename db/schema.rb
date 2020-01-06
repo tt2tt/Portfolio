@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_02_064755) do
+ActiveRecord::Schema.define(version: 2020_01_06_021601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2020_01_02_064755) do
     t.integer "likes_count", default: 0, null: false
     t.integer "comments_count", default: 0, null: false
     t.integer "original_id"
-    t.boolean "is_updated"
     t.index ["user_id"], name: "index_describes_on_user_id"
   end
 
@@ -51,18 +50,6 @@ ActiveRecord::Schema.define(version: 2020_01_02_064755) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "update_describes", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.json "images"
-    t.bigint "user_id"
-    t.bigint "describe_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["describe_id"], name: "index_update_describes_on_describe_id"
-    t.index ["user_id"], name: "index_update_describes_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -72,7 +59,7 @@ ActiveRecord::Schema.define(version: 2020_01_02_064755) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.string "prfile_image"
+    t.string "profile_image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -82,6 +69,4 @@ ActiveRecord::Schema.define(version: 2020_01_02_064755) do
   add_foreign_key "describes", "users"
   add_foreign_key "likes", "describes"
   add_foreign_key "likes", "users"
-  add_foreign_key "update_describes", "describes"
-  add_foreign_key "update_describes", "users"
 end
