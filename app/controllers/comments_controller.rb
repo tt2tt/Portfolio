@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     @comment.describe_id = @describe.id
     respond_to do |format|
       if @comment.save
+        format.html { redirect_to describe_path(@describe)}
         format.js { render :index }
         # CommentMailer.comment_mail(current_user.email, @describe.title).deliver
       else

@@ -10,4 +10,10 @@ FactoryBot.define do
     content {"仮内容"}
     images { [ Rack::Test::UploadedFile.new(Rails.root.join('spec/factories/test.jpg'), 'spec/factories/test.jpg') ] }
   end
+
+  factory :third_describe, class: Describe do
+    title {"AAA"}
+    content {"AAA"}
+    images { [ Rack::Test::UploadedFile.new(Rails.root.join('spec/factories/test.jpg'), 'spec/factories/test.jpg') ] }
+  end
 end
