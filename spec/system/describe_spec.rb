@@ -21,9 +21,10 @@ RSpec.feature '説明管理機能', type: :feature do
   end
 
   scenario '説明の詳細機能のテスト' do
+    save_and_open_page
     click_link  '仮タイトル'
 
-    expect(page).to have_content 'コンテント'
+    expect(page).to have_content '仮コンテント'
   end
 
   scenario '説明の投稿機能脳テスト' do
@@ -109,6 +110,7 @@ RSpec.feature '説明管理機能', type: :feature do
   end
 
   scenario 'コメント機能のテスト'  do
+
     click_link  '仮説明'
     fill_in 'comment_form', with: '仮コメント'
     click_button  'コメントする'
