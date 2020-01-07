@@ -3,6 +3,7 @@ class LikesController < ApplicationController
     if @like = current_user.likes.create(describe_id: params[:describe_id])
       @describe = Describe.find(params[:describe_id])
       respond_to do |format|
+        format.html { redirect_to describe_path(@describe)}
         format.js { render :like }
       end
     end
@@ -13,6 +14,7 @@ class LikesController < ApplicationController
       @describe = Describe.find(params[:describe_id])
       @like = nil
       respond_to do |format|
+        format.html { redirect_to describe_path(@describe)}
         format.js { render :like }
       end
     end

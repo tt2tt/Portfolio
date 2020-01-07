@@ -1,3 +1,13 @@
+$(document).on('turbolinks:load', function(){
+  // change_next_count
+   $(function () {
+     $("#comment_submit").click( function() {
+       var next_count = $("#count_form").attr('value') - 0 + 1
+       $("#count_form").val(`${next_count}`);
+     });
+   });
+});
+
  $(document).bind('turbolinks:load ajax:complete', function() {
   // comment_reply
   $(function () {
@@ -9,15 +19,7 @@
 `);
     });
   });
-
- // change_next_count
-  $(function () {
-    $("#comment_submit").click( function() {
-      var next_count = $("#count_form").attr('value') - 0 + 1
-      $("#count_form").val(`${next_count}`);
-    });
-  });
-
+  
    // set_reply_count
    $(function () {
      $(".click").click( function() {

@@ -1,13 +1,13 @@
 require 'rails_helper'
-include WaitForAjax
-# include AjaxHelper
 
 RSpec.feature '説明管理機能', type: :feature do
   background do
     user = FactoryBot.create(:user)
     user2 = FactoryBot.create(:second_user)
     describe = FactoryBot.create(:describe, user: user)
-    FactoryBot.create(:second_describe, user: user2)
+    describe2 = FactoryBot.create(:second_describe, user: user2)
+    describe3 = FactoryBot.create(:third_describe, user: user2)
+    FactoryBot.create(:like, user: user, describe: describe3)
 
     visit new_user_session_path
     fill_in 'メールアドレス', with: 'aaa@aaa.com'
@@ -21,9 +21,10 @@ RSpec.feature '説明管理機能', type: :feature do
   end
 
   scenario '説明の詳細機能のテスト' do
+    save_and_open_page
     click_link  '仮タイトル'
 
-    expect(page).to have_content 'コンテント'
+    expect(page).to have_content '仮コンテント'
   end
 
   scenario '説明の投稿機能脳テスト' do
@@ -54,11 +55,28 @@ RSpec.feature '説明管理機能', type: :feature do
     expect(page).not_to have_content '仮タイトル'
   end
 
+  scenario '説明更新機能のテスト' do
+    click_link  '仮タイトル'
+    click_link  '説明を更新する'
+    fill_in '内容', with: '仮内容(更新)'
+
+    click_button '登録する'
+    expect(page).to have_content '次'
+  end
+
   scenario 'ユーザーごとの投稿一覧機能のテスト' do
     click_link 'マイページ'
     click_link '投稿一覧'
 
     expect(page).to have_content '仮タイトル'
+    expect(page).not_to have_content '仮説明'
+  end
+
+  scenario 'ユーザーごとの投稿検索機能のテスト'  do
+    click_link 'マイページ'
+    click_link '投稿一覧'
+    fill_in 'my_q', with: '仮'
+
     expect(page).not_to have_content '仮説明'
   end
 
@@ -69,32 +87,45 @@ RSpec.feature '説明管理機能', type: :feature do
     expect(page).not_to have_content '削除'
   end
 
-  # scenario 'いいね機能のテスト', js: true  do
-  #   click_link  '仮説明'
-  #   find 'いいね'.click
-  #   # find '#like_area'.click
-  #   # click_on 'unhurt'
-  #   # click_on "0"
-  #   # save_and_open_page
-  #   # find '#unhurt'.on
-  #   # click_link "#unhurt"
-  #   # click_link '#like_area'
-  #   # find '#unhurt'.trigger("click")
-  #   # click_link '0'
-  #   # find('0').click
-  #   # save_and_open_page
-  #   # find('unhurt')
-  #   # find("unhurt", visible: false).trigger("click")
-  #
-  #
-  #   expect(page).to have_content '1'
-  # end
+  scenario '説明の検索機能のテスト' do
+    fill_in 'q[title_cont]', with: 'AAA'
+    find('.search_icon').click
 
-  # scenario 'コメント機能のテスト', js: true   do
-  #   click_link  '仮説明'
-  #   fill_in 'comment_content', with: '仮コメント'
-  #   click_button  'コメントする'
-  #
-  #   expect(page).not_to have_content '仮コメント'
-  # end
+    expect(page).not_to have_content '仮タイトル'
+    expect(page).not_to have_content '仮説明'
+  end
+
+  scenario 'いいね機能のテスト'  do
+    click_link  '仮説明'
+    find('.unhurt').click
+
+    expect(page).to have_content '1'
+  end
+
+  scenario 'いいね解除のテスト' do
+    click_link  'AAA'
+    find('.hurt').click
+
+    expect(page).to have_content '0'
+  end
+
+  scenario 'コメント機能のテスト'  do
+
+    click_link  '仮説明'
+    fill_in 'comment_form', with: '仮コメント'
+    click_button  'コメントする'
+
+    expect(page).to have_content '仮コメント'
+  end
+
+  scenario 'コメント返信機能のテスト' do
+    click_link  '仮説明'
+    fill_in 'comment_form', with: '仮コメント'
+    click_button  'コメントする'
+    click_link '返信する'
+    fill_in 'comment_form', with: '返信コメント'
+    click_button  'コメントする'
+
+    expect(page).to have_content '返信コメント'
+  end
 end
