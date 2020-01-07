@@ -20,7 +20,7 @@
 <div class="my_serach">
   <h3>自分の説明を検索する</h3>
   <%= search_form_for @my_q, url: contributions_path do |f| %>
-    <p><%= f.search_field :title_cont %></p>
+    <p><%= f.search_field :title_cont, id: "my_q" %></p>
 
     <%= button_tag type: "submit", class: "search_icon" do %>
       <i class="fa fa-search"></i>

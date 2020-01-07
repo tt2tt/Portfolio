@@ -11,7 +11,7 @@ RSpec.describe Describe, type: :model do
     expect(describe).not_to be_valid
   end
 
-  it "titleが100文字以上ならバリテーションが通らない" do
+  it "titleが101文字以上ならバリテーションが通らない" do
     describe = current_user.describes.build(title: 'a' * 101, content: '仮コンテント', images: [image])
     expect(describe).not_to be_valid
   end

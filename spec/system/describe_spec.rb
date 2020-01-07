@@ -54,6 +54,15 @@ RSpec.feature '説明管理機能', type: :feature do
     expect(page).not_to have_content '仮タイトル'
   end
 
+  scenario '説明更新機能のテスト' do
+    click_link  '仮タイトル'
+    click_link  '説明を更新する'
+    fill_in '内容', with: '仮内容(更新)'
+
+    click_button '登録する'
+    expect(page).to have_content '次'
+  end
+
   scenario 'ユーザーごとの投稿一覧機能のテスト' do
     click_link 'マイページ'
     click_link '投稿一覧'
@@ -62,11 +71,27 @@ RSpec.feature '説明管理機能', type: :feature do
     expect(page).not_to have_content '仮説明'
   end
 
+  scenario 'ユーザーごとの投稿検索機能のテスト'  do
+    click_link 'マイページ'
+    click_link '投稿一覧'
+    fill_in 'my_q', with: '仮'
+
+    expect(page).not_to have_content '仮説明'
+  end
+
   scenario '説明の操作制限のテスト'  do
     click_link  '仮説明'
 
     expect(page).not_to have_content '編集'
     expect(page).not_to have_content '削除'
+  end
+
+  scenario '説明の検索機能のテスト' do
+    fill_in 'q[title_cont]', with: 'AAA'
+    find('.search_icon').click
+
+    expect(page).not_to have_content '仮タイトル'
+    expect(page).not_to have_content '仮説明'
   end
 
   scenario 'いいね機能のテスト'  do
@@ -89,5 +114,16 @@ RSpec.feature '説明管理機能', type: :feature do
     click_button  'コメントする'
 
     expect(page).to have_content '仮コメント'
+  end
+
+  scenario 'コメント返信機能のテスト' do
+    click_link  '仮説明'
+    fill_in 'comment_form', with: '仮コメント'
+    click_button  'コメントする'
+    click_link '返信する'
+    fill_in 'comment_form', with: '返信コメント'
+    click_button  'コメントする'
+
+    expect(page).to have_content '返信コメント'
   end
 end

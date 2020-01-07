@@ -11,7 +11,7 @@ RSpec.feature 'ユーザー管理機能', type: :feature do
     fill_in 'メールアドレス', with: 'aaa@aaa.com'
     fill_in 'パスワード', with: 'AAAAAA'
 
-    click_button 'Log in'
+    click_button 'ログイン'
 
     expect(page).to have_content 'ログアウト'
   end
@@ -23,7 +23,7 @@ RSpec.feature 'ユーザー管理機能', type: :feature do
     fill_in 'パスワード', with: 'BBBBBB'
     fill_in '確認用パスワード', with: 'BBBBBB'
 
-    click_button 'Sign up'
+    click_button 'アカウント作成'
 
     expect(page).to have_content 'ログアウト'
   end
@@ -33,7 +33,7 @@ RSpec.feature 'ユーザー管理機能', type: :feature do
     fill_in 'メールアドレス', with: 'aaa@aaa.com'
     fill_in 'パスワード', with: 'AAAAAA'
 
-    click_button 'Log in'
+    click_button 'ログイン'
 
     expect(page).to have_content 'ログアウト'
   end
@@ -65,12 +65,12 @@ RSpec.feature 'ユーザー管理機能', type: :feature do
     fill_in 'パスワード', with: 'BBBBBB'
     fill_in '確認用パスワード', with: 'BBBBBB'
 
-    click_button 'Update'
+    click_button 'パスワードを変更する'
     click_link 'ログアウト'
     click_link 'ログイン'
     fill_in 'メールアドレス', with: 'aaa@aaa.com'
     fill_in 'パスワード', with: 'BBBBBB'
-    click_button 'Log in'
+    click_button 'ログイン'
 
     expect(page).to have_content 'ログアウト'
   end
@@ -82,8 +82,12 @@ RSpec.feature 'ユーザー管理機能', type: :feature do
     expect(page).to have_content 'ログアウト'
   end
 
-  scenario 'パスワードを忘れた場合のメール機能のテスト' do
-    
+  scenario 'ユーザー削除機能のテスト' do
+    login
+    click_link 'マイページ'
+    click_link 'ユーザーを削除'
+
+    expect(page).to have_content 'ログイン'
   end
 
 end
