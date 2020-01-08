@@ -14,6 +14,8 @@ gem 'faker'
 gem 'ransack'
 gem 'counter_culture'
 gem 'kaminari'
+gem 'fog-aws'
+gem 'dotenv-rails' 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
