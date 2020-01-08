@@ -21,7 +21,6 @@ RSpec.feature '説明管理機能', type: :feature do
   end
 
   scenario '説明の詳細機能のテスト' do
-    save_and_open_page
     click_link  '仮タイトル'
 
     expect(page).to have_content '仮コンテント'
