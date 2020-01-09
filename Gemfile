@@ -16,7 +16,8 @@ gem 'counter_culture'
 gem 'kaminari'
 gem 'fog-aws'
 gem 'dotenv-rails'
-
+gem 'unicorn'
+gem 'mini_racer', platforms: :ruby
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -64,6 +65,16 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+group :development, :test do
+    gem 'capistrano', '3.6.0'
+    gem 'capistrano-bundler'
+    gem 'capistrano-rails'
+    gem 'capistrano-rbenv'
+    gem 'capistrano3-unicorn'
+    gem 'ed25519'
+    gem 'bcrypt_pbkdf'
+  end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
