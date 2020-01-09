@@ -19,7 +19,7 @@ $(document).on('turbolinks:load', function(){
 `);
     });
   });
-  
+
    // set_reply_count
    $(function () {
      $(".click").click( function() {
