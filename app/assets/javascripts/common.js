@@ -9,7 +9,7 @@ $(document).on('turbolinks:load', function(){
 });
 
  $(document).bind('turbolinks:load ajax:complete', function() {
-  // comment_reply
+  // set_comment_reply_id
   $(function () {
    $(".click").click( function() {
      var position = $("#comment_form").offset().top;
@@ -27,6 +27,9 @@ $(document).on('turbolinks:load', function(){
        $("#reply_form").val(`${reply_id}`);
      });
    });
+
+   // reset_comment_reply_id
+   $("#reply_form").val("");
 
    // stages
    $("div:has(.call1)").addClass("call_count1");
