@@ -53,6 +53,7 @@ GEM
       io-like (~> 0.3.0)
     arel (9.0.0)
     bcrypt (3.1.13)
+    bcrypt_pbkdf (1.0.1)
     better_errors (2.5.1)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -128,6 +129,7 @@ GEM
     dotenv-rails (2.7.5)
       dotenv (= 2.7.5)
       railties (>= 3.2, < 6.1)
+    ed25519 (1.2.4)
     erubi (1.9.0)
     excon (0.71.1)
     execjs (2.7.0)
@@ -357,6 +359,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt_pbkdf
   better_errors
   binding_of_caller
   bootsnap (>= 1.1.0)
@@ -374,6 +377,7 @@ DEPENDENCIES
   database_cleaner
   devise
   dotenv-rails
+  ed25519
   factory_bot_rails
   faker
   fog-aws
