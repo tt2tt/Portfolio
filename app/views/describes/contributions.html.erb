@@ -13,10 +13,12 @@
      <% end %>
   </div>
   <% end %>
+
   <div class="pages">
     <p class="page"><%= paginate @describes %></p>
   </div>
 </div>
+
 <div class="my_serach">
   <h3>自分の説明を検索する</h3>
   <%= search_form_for @my_q, url: contributions_path do |f| %>

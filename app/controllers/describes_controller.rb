@@ -2,7 +2,7 @@ class DescribesController < ApplicationController
   before_action :set_id, only:  [:show, :edit, :update, :destroy]
 
   def index
-    @describes = @q.result.where(original_id: nil).page(params[:page]).per(10)
+    @describes = @q.result.original_describe.page(params[:page]).per(10)
   end
 
   def new
@@ -17,7 +17,7 @@ class DescribesController < ApplicationController
      @like = current_user.likes.find_by(describe_id: @describe.id)
      @comment = current_user.comments.build
    end
-    @comments = @describe.comments.where(reply_comment_id: nil)
+    @comments = @describe.comments.original_comment
     @comment = Comment.new
     all_describes = @describe.update_describes.reverse.push(@describe)
     @all_describes = Kaminari.paginate_array(all_describes).page(params[:page]).per(1)
@@ -60,7 +60,7 @@ class DescribesController < ApplicationController
 
   def contributions
     @my_q = current_user.describes.ransack(params[:q])
-    @describes = @my_q.result.where(original_id: nil).page(params[:page]).per(10)
+    @describes = @my_q.result.original_describe.page(params[:page]).per(10)
   end
 
   private

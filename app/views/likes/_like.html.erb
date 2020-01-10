@@ -10,4 +10,8 @@
       <% end %>
     <% end %>
   <% end %>
+<% else %>
+  <%= link_to likes_path(describe_id: describe.id), method: :post, class: "unhurt",  remote: true do %>
+    <i class="far fa-heart fa-3x" style="color:red" ></i> <%= describe.likes_count %>
+  <% end %>
 <% end %>

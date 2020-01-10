@@ -20,6 +20,9 @@ $(document).on('turbolinks:load', function(){
     });
   });
 
+  // reset_comment_reply_id
+  $("#reply_form").val("");
+
    // set_reply_count
    $(function () {
      $(".click").click( function() {
@@ -27,9 +30,6 @@ $(document).on('turbolinks:load', function(){
        $("#reply_form").val(`${reply_id}`);
      });
    });
-
-   // reset_comment_reply_id
-   $("#reply_form").val("");
 
    // stages
    $("div:has(.call1)").addClass("call_count1");

@@ -13,6 +13,8 @@ class Describe < ApplicationRecord
     |parent| Arel::Nodes::InfixOperation.new('->', parent.table[:json_column], 'images')
   end
 
+  scope :original_describe, -> {where(original_id: nil)}
+
   private
 
   def content_or_images
