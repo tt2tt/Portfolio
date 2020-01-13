@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :describes
+  has_many :describes, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
