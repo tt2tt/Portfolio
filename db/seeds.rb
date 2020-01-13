@@ -31,16 +31,16 @@ end
 end
 
 # comment
-20.times do |n|
-  content = '仮コメント'
-  user_id =  rand(1..2)
-  describe_id = rand(1..5)
-  Comment.create!(
-               content: content,
-               user_id: user_id,
-               describe_id: describe_id,
-               )
-end
+# 20.times do |n|
+#   content = '仮コメント'
+#   user_id =  rand(1..2)
+#   describe_id = rand(1..5)
+#   Comment.create!(
+#                content: content,
+#                user_id: user_id,
+#                describe_id: describe_id,
+#                )
+# end
 
 # like
 Like.create(user_id: 1, describe_id: 1)
