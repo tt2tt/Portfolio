@@ -10,7 +10,7 @@ RSpec.describe CommentMailer, type: :mailer do
   it "コメント投稿時のメール内容のテスト" do
     mail = subject
 
-    expect(mail.from[0]).to eq 'from@example.com'
+    expect(mail.from[0]).to eq 'noreply@sharebrain.net'
     expect(mail.to[0]).to eq 'aaa@aaa.com'
     expect(mail.subject).to eq 'あなたの投稿にコメントがありました。'
     expect(mail.body).to include 'タイトルにコメントがありました。'
