@@ -20,10 +20,20 @@
 end
 
 # describe
-20.times do |n|
+10.times do |n|
   title = [*'A'..'Z'][rand(26)]
   content = '仮説明'
-  user_id =  rand(1..2)
+  user_id =  User.first.id
+  Describe.create!(title: title,
+               content: content,
+               user_id: user_id,
+               )
+end
+
+10.times do |n|
+  title = [*'A'..'Z'][rand(26)]
+  content = '仮説明'
+  user_id =  User.second.id
   Describe.create!(title: title,
                content: content,
                user_id: user_id,
