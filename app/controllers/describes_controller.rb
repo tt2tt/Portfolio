@@ -54,8 +54,12 @@ class DescribesController < ApplicationController
   end
 
   def destroy
-    @describe.destroy
-    redirect_to describes_path, notice: '説明を削除しました'
+    if @describe.user_id == current_user.id
+      @describe.destroy
+      redirect_to describes_path, notice: '説明を削除しました'
+    else
+      redirect_to @describe, notice: '投稿者のみ削除できます'
+    end
   end
 
   def contributions
