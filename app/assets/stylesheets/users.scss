@@ -31,8 +31,22 @@
   margin-top: 20px;
   margin-left: 60px;
 }
-
-// show
+// change_password
+.change_password{
+  height: 250px;
+  width: 300px;
+  border: 1px solid #000;
+  margin-top: 40px;
+  margin-left: 400px;
+}
+.change_form{
+  margin-top: 20px;
+  margin-left: 60px;
+}
+.change_password .actions{
+  margin-top: 25px;
+}
+// my_page
 .my_page{
 width: 600px;
 height: 500px;
@@ -71,7 +85,7 @@ position: relative;
   margin-left: 130px;
 }
 
-// edit
+// password_edit
 .edit_password{
   margin-top: 50px;
   margin-left: 380px;
