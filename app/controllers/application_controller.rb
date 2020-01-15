@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_search
-   @q = Describe.ransack(params[:q])
+    @q = Describe.ransack(params[:q])
   end
 
   protected

@@ -2,7 +2,7 @@
   <% unless describe.user_id == current_user.id %>
     <% if like.present? %>
       <%= link_to like_path(id: like.id, describe_id: describe.id), method: :delete, class: 'hurt', remote: true do %>
-         <i class="fas fa-heart fa-3x" style="color:red" ></i> <%= describe.likes_count %>
+        <i class="fas fa-heart fa-3x" style="color:red" ></i> <%= describe.likes_count %>
       <% end %>
     <% else %>
       <%= link_to likes_path(describe_id: describe.id), method: :post, class: "unhurt",  remote: true do %>

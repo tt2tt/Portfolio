@@ -14,9 +14,9 @@ class DescribesController < ApplicationController
 
   def show
     if user_signed_in?
-     @like = current_user.likes.find_by(describe_id: @describe.id)
-     @comment = current_user.comments.build
-   end
+      @like = current_user.likes.find_by(describe_id: @describe.id)
+      @comment = current_user.comments.build
+    end
     @comments = @describe.comments.original_comment
     @comment = Comment.new
     all_describes = @describe.update_describes.reverse.push(@describe)
@@ -25,9 +25,7 @@ class DescribesController < ApplicationController
 
   def edit
     if user_signed_in?
-      if @describe.user_id == current_user.id
-
-      else
+      unless @describe.user_id == current_user.id
         redirect_to @describe, notice: '投稿者のみ編集できます'
       end
     else

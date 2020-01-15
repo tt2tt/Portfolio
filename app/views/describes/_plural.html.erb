@@ -1,31 +1,31 @@
-<div class="show">
-  <% @all_describes.each do |describe| %>
+<% @all_describes.each do |describe| %>
+  <div class="show">
+    <h1><%= describe.title %></h1>
+    <ul class="slider">
+      <% describe.images.each do |image| %>
+        <ul class="slider">
+          <%= image_tag (image.url) if image.url%>
+        </ul>
+      <% end %>
+    </ul>
 
-  <h1><%= describe.title %></h1>
-  <ul class="slider">
-    <% describe.images.each do |image| %>
-      <ul class="slider">
-        <%= image_tag (image.url) if image.url%>
-      </ul>
-    <% end %>
-  </ul>
-  <p class="main"> <%= describe.content %></p>
+    <p class="main"> <%= describe.content %></p>
 
-  <div class="pages">
-    <p class="page"><%= paginate @all_describes, window: 2 %></p>
+    <div class="pages">
+      <p class="page"><%= paginate @all_describes, window: 2 %></p>
+    </div>
+
+    <div id="comments_area">
+      <% comments = describe.comments.where(reply_comment_id: nil) %>
+      <%= render partial: 'comments/index', locals: { comments: comments, describe: describe } %>
+    </div>
+
+    <%= render partial: 'comments/plural_form', locals: { comment: @comment, describe: describe } %>
   </div>
 
-  <div id="comments_area">
-    <% comments = describe.comments.where(reply_comment_id: nil) %>
-    <%= render partial: 'comments/index', locals: { comments: comments, describe: describe } %>
+  <div id="like_area" class="likes">
+    <%= render partial: 'likes/like', locals: { like: @like, describe: @describe } %>
   </div>
-
-  <%= render partial: 'comments/plural_form', locals: { comment: @comment, describe: describe } %>
-</div>
-
-<div id="like_area" class="likes">
-  <%= render partial: 'likes/like', locals: { like: @like, describe: @describe } %>
-</div>
 
   <div class="links">
     <% if user_signed_in? %>

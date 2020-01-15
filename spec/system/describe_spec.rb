@@ -16,8 +16,8 @@ RSpec.feature '説明管理機能', type: :feature do
   end
 
   scenario '説明の一覧機能のテスト' do
-  expect(page).to have_content '仮タイトル'
-  expect(page).to have_content '仮説明'
+    expect(page).to have_content '仮タイトル'
+    expect(page).to have_content '仮説明'
   end
 
   scenario '説明の詳細機能のテスト' do
@@ -30,7 +30,6 @@ RSpec.feature '説明管理機能', type: :feature do
     click_link  '説明投稿'
     fill_in 'タイトル', with: '新規説明'
     fill_in '内容', with: '新規説明'
-
     click_button '登録する'
 
     expect(page).to have_content '新規説明'
@@ -41,7 +40,6 @@ RSpec.feature '説明管理機能', type: :feature do
     click_link '編集'
     fill_in 'タイトル', with: '新規説明'
     fill_in '内容', with: '新規説明'
-
     click_button '更新する'
 
     expect(page).to have_content '新規説明'
@@ -58,8 +56,8 @@ RSpec.feature '説明管理機能', type: :feature do
     click_link  '仮タイトル'
     click_link  '説明を更新する'
     fill_in '内容', with: '仮内容(更新)'
-
     click_button '登録する'
+
     expect(page).to have_content '次'
   end
 

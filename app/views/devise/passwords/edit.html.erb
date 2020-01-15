@@ -1,6 +1,5 @@
 <div class="change_password">
   <div class="change_form">
-
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
       <%= f.hidden_field :reset_password_token %>
@@ -19,6 +18,5 @@
         <%= f.submit "パスワードを変更する" %>
       </div>
     <% end %>
-    
   </div>
 </div>
