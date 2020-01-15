@@ -2,7 +2,7 @@ class DescribesController < ApplicationController
   before_action :set_id, only:  [:show, :edit, :update, :destroy]
 
   def index
-    @describes = @q.result.original_describe.page(params[:page]).per(10)
+    @describes = @q.result.original_describe.latest.page(params[:page]).per(10)
   end
 
   def new
@@ -63,7 +63,7 @@ class DescribesController < ApplicationController
   end
 
   def contributions
-    @my_q = current_user.describes.ransack(params[:q])
+    @my_q = current_user.describes.latest.ransack(params[:q])
     @describes = @my_q.result.original_describe.page(params[:page]).per(10)
   end
 

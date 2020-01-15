@@ -14,6 +14,7 @@ class Describe < ApplicationRecord
   end
 
   scope :original_describe, -> {where(original_id: nil)}
+  scope :latest, -> {order(updated_at: :desc)}
 
   private
 
