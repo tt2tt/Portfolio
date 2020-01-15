@@ -1,6 +1,5 @@
 <div class="login">
   <div class="login_form">
-
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email %><br />
@@ -16,6 +15,6 @@
         <%= f.submit "ログイン" %>
       </div>
     <% end %>
-<%= link_to "パスワードを忘れた場合", new_user_password_path %>
+    <%= link_to "パスワードを忘れた場合", new_user_password_path %>
   </div>
 </div>

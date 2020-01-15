@@ -22,7 +22,6 @@ RSpec.feature 'ユーザー管理機能', type: :feature do
     fill_in 'メールアドレス', with: 'bbb@bbb.com'
     fill_in 'パスワード', with: 'BBBBBB'
     fill_in '確認用パスワード', with: 'BBBBBB'
-
     click_button 'アカウント作成'
 
     expect(page).to have_content 'ログアウト'
@@ -32,7 +31,6 @@ RSpec.feature 'ユーザー管理機能', type: :feature do
     visit new_user_session_path
     fill_in 'メールアドレス', with: 'aaa@aaa.com'
     fill_in 'パスワード', with: 'AAAAAA'
-
     click_button 'ログイン'
 
     expect(page).to have_content 'ログアウト'
@@ -64,7 +62,6 @@ RSpec.feature 'ユーザー管理機能', type: :feature do
     fill_in '現在のパスワード', with: 'AAAAAA'
     fill_in 'パスワード', with: 'BBBBBB'
     fill_in '確認用パスワード', with: 'BBBBBB'
-
     click_button 'パスワードを変更する'
     click_link 'ログアウト'
     click_link 'ログイン'

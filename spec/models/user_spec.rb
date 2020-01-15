@@ -7,8 +7,8 @@ RSpec.describe User, type: :model do
   end
 
   it 'emailが空ならバリテーションが通らない' do
-      user = User.new(name: '仮ユーザー', email: '', password: 'A' * 6, password_confirmation: 'A' * 6, profile_image: '')
-      expect(user).not_to be_valid
+    user = User.new(name: '仮ユーザー', email: '', password: 'A' * 6, password_confirmation: 'A' * 6, profile_image: '')
+    expect(user).not_to be_valid
   end
 
   it 'emailがフォーマットから外れていればバリテーションが通らない' do
