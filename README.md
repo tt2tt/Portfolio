@@ -1,8 +1,24 @@
+# 使用技術
+
+- ruby 2.6.5
+- rails 5.2.3
+- PostgreSQL 11.3
+- jQuery
+- Bootstrap
+- GitHub
+- AWS
+
+  - EC2/ELB
+  - S3
+  - SES
+  - Route53
+  - Certificate Manager
+
 # Brain Share （説明共有アプリ）
 
 # URL
 
-<http://sharebrain.net/>
+<https://sharebrain.net/>
 
 # 概要
 
@@ -20,12 +36,6 @@
 
 知識だけでなく考え方も共有する<br>
 説明する側、説明を受ける側双方に利がある
-
-# バージョン
-
-- ruby '2.6.5'
-- rails '5.2.3'
-- PostgreSQL '11.3'
 
 # 機能一覧
 
