@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
     @q = Describe.ransack(params[:q])
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to describes_path
+  end
+
   protected
 
   def configure_permitted_parameters
