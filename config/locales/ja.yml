@@ -3,6 +3,8 @@ ja:
   activerecord:
     models:
       describe: 説明
+      like: いいね
+      comment: コメント
     attributes:
       describe:
         title: タイトル
