@@ -19,6 +19,7 @@ gem 'dotenv-rails'
 gem 'unicorn'
 gem 'aws-ses'
 gem 'mini_racer', platforms: :ruby
+gem 'jekyll-sass-converter', git: 'https://github.com/jekyll/jekyll-sass-converter', branch: 'master'
 gem 'activeadmin'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
