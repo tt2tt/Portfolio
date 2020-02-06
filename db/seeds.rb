@@ -58,3 +58,4 @@ end
 # Like.create(user_id: 2, describe_id: 2)
 # Like.create(user_id: 2, describe_id: 3)
 # Like.create(user_id: 3, describe_id: 3)
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

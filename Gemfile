@@ -19,6 +19,7 @@ gem 'dotenv-rails'
 gem 'unicorn'
 gem 'aws-ses'
 gem 'mini_racer', platforms: :ruby
+gem 'activeadmin'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'

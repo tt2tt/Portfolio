@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   root to: 'tops#top'
   devise_for :users, controllers: { registrations: 'users/registrations' }
   devise_scope :user do
