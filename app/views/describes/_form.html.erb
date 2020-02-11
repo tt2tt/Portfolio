@@ -32,6 +32,10 @@
       <%= f.text_area :content, placeholder: "内容" %>
     </p>
 
+    <p class="category_form">
+      <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
+    </p>
+
     <p class="image_form">
       <%= f.file_field :images, multiple: true %>
     </p>

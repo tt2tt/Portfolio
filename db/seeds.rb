@@ -7,38 +7,38 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # user
-20.times do |n|
-  name = Faker::Name.name
-  email = Faker::Internet.email
-  password = "password"
-  User.create!(
-               name: name,
-               email: email,
-               password: password,
-               password_confirmation: password,
-               )
-end
+# 20.times do |n|
+#   name = Faker::Name.name
+#   email = Faker::Internet.email
+#   password = "password"
+#   User.create!(
+#                name: name,
+#                email: email,
+#                password: password,
+#                password_confirmation: password,
+#                )
+# end
 
 # describe
-10.times do |n|
-  title = [*'A'..'Z'][rand(26)]
-  content = '仮説明'
-  user_id =  User.first.id
-  Describe.create!(title: title,
-               content: content,
-               user_id: user_id,
-               )
-end
+# 10.times do |n|
+#   title = [*'A'..'Z'][rand(26)]
+#   content = '仮説明'
+#   user_id =  User.first.id
+#   Describe.create!(title: title,
+#                content: content,
+#                user_id: user_id,
+#                )
+# end
 
-10.times do |n|
-  title = [*'A'..'Z'][rand(26)]
-  content = '仮説明'
-  user_id =  User.second.id
-  Describe.create!(title: title,
-               content: content,
-               user_id: user_id,
-               )
-end
+# 10.times do |n|
+#   title = [*'A'..'Z'][rand(26)]
+#   content = '仮説明'
+#   user_id =  User.second.id
+#   Describe.create!(title: title,
+#                content: content,
+#                user_id: user_id,
+#                )
+# end
 
 # comment
 # 20.times do |n|
@@ -58,3 +58,15 @@ end
 # Like.create(user_id: 2, describe_id: 2)
 # Like.create(user_id: 2, describe_id: 3)
 # Like.create(user_id: 3, describe_id: 3)
+
+# category
+Category.create(name: "日本語")
+Category.create(name: "数学")
+Category.create(name: "化学")
+Category.create(name: "生物")
+Category.create(name: "物理")
+Category.create(name: "歴史")
+Category.create(name: "地理")
+Category.create(name: "公民")
+Category.create(name: "英語")
+Category.create(name: "その他")
