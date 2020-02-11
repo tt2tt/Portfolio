@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_06_021601) do
+ActiveRecord::Schema.define(version: 2020_02_11_113215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
@@ -25,6 +31,15 @@ ActiveRecord::Schema.define(version: 2020_01_06_021601) do
     t.integer "reply_comment_id", default: 0
     t.index ["describe_id"], name: "index_comments_on_describe_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "describe_categories", force: :cascade do |t|
+    t.bigint "describe_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_describe_categories_on_category_id"
+    t.index ["describe_id"], name: "index_describe_categories_on_describe_id"
   end
 
   create_table "describes", force: :cascade do |t|
@@ -66,6 +81,8 @@ ActiveRecord::Schema.define(version: 2020_01_06_021601) do
 
   add_foreign_key "comments", "describes"
   add_foreign_key "comments", "users"
+  add_foreign_key "describe_categories", "categories"
+  add_foreign_key "describe_categories", "describes"
   add_foreign_key "describes", "users"
   add_foreign_key "likes", "describes"
   add_foreign_key "likes", "users"

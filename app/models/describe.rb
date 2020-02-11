@@ -3,6 +3,8 @@ class Describe < ApplicationRecord
   has_many :update_describes, class_name: 'Describe', foreign_key: :original_id, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :describe_categories, dependent: :destroy
+  has_many :categories, through: :describe_categories
 
   validates :title, presence: true,  length: { maximum: 100 }
   validates :content_or_images, presence: true
