@@ -5,8 +5,11 @@ class TagsController < ApplicationController
 
   def create
     @tag = current_user.tags.build(tag_params)
-    @tag.save
-    redirect_to describes_path, notice: 'タグを投稿しました'
+    if @tag.save
+      redirect_to describes_path, notice: 'タグを投稿しました'
+    else
+      render :new
+    end
   end
 
   private
