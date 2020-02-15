@@ -36,6 +36,10 @@
       <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
     </p>
 
+    <p class="tag_form">
+      <%= f.collection_check_boxes(:tag_ids, current_user.tags, :id, :name) %>
+    </p>
+
     <p class="image_form">
       <%= f.file_field :images, multiple: true %>
     </p>

@@ -81,7 +81,7 @@ class DescribesController < ApplicationController
   private
 
   def describe_params
-    params.require(:describe).permit(:title, :content, {images: []}, :original_id, { category_ids: [] })
+    params.require(:describe).permit(:title, :content, {images: []}, :original_id, { category_ids: [] }, { tag_ids: [] })
   end
 
   def set_id
