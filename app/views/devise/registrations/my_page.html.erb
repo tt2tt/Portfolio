@@ -23,6 +23,7 @@
 
   <div class="my_page_links"">
     <p><%= link_to "投稿一覧", contributions_path(id: current_user.id) %></p>
+    <p><%= link_to "タグの作成", new_tag_path %></p>
     <p><%= link_to "パスワードを変更する", edit_user_registration_path(current_user.id) %></p>
     <p><%= link_to "ユーザーを削除", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
   </div>

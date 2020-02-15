@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_113215) do
+ActiveRecord::Schema.define(version: 2020_02_15_065303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 2020_02_11_113215) do
     t.index ["describe_id"], name: "index_describe_categories_on_describe_id"
   end
 
+  create_table "describe_tags", force: :cascade do |t|
+    t.bigint "describe_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["describe_id"], name: "index_describe_tags_on_describe_id"
+    t.index ["tag_id"], name: "index_describe_tags_on_tag_id"
+  end
+
   create_table "describes", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -65,6 +74,14 @@ ActiveRecord::Schema.define(version: 2020_02_11_113215) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tags_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -83,7 +100,10 @@ ActiveRecord::Schema.define(version: 2020_02_11_113215) do
   add_foreign_key "comments", "users"
   add_foreign_key "describe_categories", "categories"
   add_foreign_key "describe_categories", "describes"
+  add_foreign_key "describe_tags", "describes"
+  add_foreign_key "describe_tags", "tags"
   add_foreign_key "describes", "users"
   add_foreign_key "likes", "describes"
   add_foreign_key "likes", "users"
+  add_foreign_key "tags", "users"
 end

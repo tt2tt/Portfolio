@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'tags/new'
   root to: 'tops#top'
   devise_for :users, controllers: { registrations: 'users/registrations' }
   devise_scope :user do
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :likes, only: [:create, :destroy]
+  resources :tags, only: [:new, :create]
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"

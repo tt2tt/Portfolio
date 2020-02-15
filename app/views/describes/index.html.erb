@@ -15,6 +15,13 @@
          <% end %>
        </p>
        <p>
+       <p>
+         <% if describe.tags[0] %>
+           <% describe.tags.each do |tag| %>
+             <%= tag.name %>
+           <% end %>
+         <% end %>
+       </p>
          <%= describe.title %>
        </p>
      <% end %>
