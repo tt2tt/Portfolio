@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
   resources :likes, only: [:create, :destroy]
   resources :tags, only: [:new, :create]
+  resources :lnappropriates, only: [:create]
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"

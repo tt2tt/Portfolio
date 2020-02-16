@@ -29,3 +29,9 @@
     <% end %>
   <% end %>
 </div>
+
+<div class="lnappropriates">
+  <% if @describe.lnappropriates[0] == nil %>
+    <%= link_to '不適切', lnappropriates_path(describe_id: @describe.id), method: :post, class: 'btn btn-primary' %>
+  <% end %>
+</div>
