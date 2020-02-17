@@ -1,0 +1,12 @@
+<div class="admin_users">
+  <% @users.each do |user| %>
+    <div class="name">
+      <%= user.name %>
+    </div>
+
+    <div class="email">
+      <%= user.email %>
+    </div>
+    <%= link_to 'Destroy', admin_user_path(user.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+  <% end %>
+</div>

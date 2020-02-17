@@ -1,0 +1,11 @@
+<div class="show">
+  <h1><%= @describe.title %></h1>
+  <ul class="slider">
+    <% @describe.images.each do |image| %>
+      <ul class="slider">
+        <%= image_tag (image.url) if image.url%>
+      </ul>
+    <% end %>
+  </ul>
+  <p class="main"><%= safe_join("#{@describe.content}".split("\n"),tag(:br)) %></p>
+</div>

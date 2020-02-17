@@ -1,0 +1,10 @@
+<div class="admin_lnappropriates">
+  <% @describes.each do |describe| %>
+    <div class="describe_title">
+      <%= describe.title %>
+    </div>
+
+    <%= link_to 'Show', admin_describe_path(describe.id), class: 'btn btn-info' %>
+    <%= link_to 'Destroy', admin_describe_path(describe.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+  <% end %>
+</div>

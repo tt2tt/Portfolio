@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   resources :tags, only: [:new, :create]
   resources :lnappropriates, only: [:create]
 
+  namespace :admin do
+    resources :users, only: [:index, :destroy]
+    resources :describes, only: [:index, :show, :destroy]
+  end
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
