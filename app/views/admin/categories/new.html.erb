@@ -1,0 +1,20 @@
+<div class="admin_links">
+  <%= link_to "ユーザー一覧", admin_users_path, class: "left_nav" %>
+  <%= link_to "不適切投稿一覧", admin_describes_path, class: "left_nav" %>
+  <%= link_to "カテゴリー作成", new_admin_category_path %>
+</div>
+
+<div class="category_new">
+  <div class="category_form">
+    <%= form_with(model: @category, local: true, url: admin_categories_path) do |f| %>
+      <div class="category_name">
+        <%= f.label :カテゴリー名 %><br>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, only: [:index, :destroy]
     resources :describes, only: [:index, :show, :destroy]
+    resources :categories, only: [:new, :create]
   end
 
   if Rails.env.development?

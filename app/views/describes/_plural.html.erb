@@ -11,6 +11,12 @@
 
     <p class="main"> <%= describe.content %></p>
 
+    <div class="lnappropriates">
+      <% if describe.lnappropriates[0] == nil %>
+        <%= link_to '不適切', lnappropriates_path(describe_id: describe.id), method: :post %>
+      <% end %>
+    </div>
+
     <div class="pages">
       <p class="page"><%= paginate @all_describes, window: 2 %></p>
     </div>
@@ -34,12 +40,6 @@
         <%= link_to '編集', edit_describe_path(describe), class: 'btn btn-success' %>&nbsp;&nbsp;&nbsp;
         <%= link_to '削除', describe, method: :delete, data: { confirm: '本当に削除しますか' }, class: 'btn btn-danger' %>
       <% end %>
-    <% end %>
-  </div>
-
-  <div class="lnappropriates">
-    <% if describe.lnappropriates[0] == nil %>
-      <%= link_to '不適切', lnappropriates_path(describe_id: describe.id), method: :post, class: 'btn btn-primary' %>
     <% end %>
   </div>
 

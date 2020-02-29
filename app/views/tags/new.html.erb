@@ -1,18 +1,24 @@
-<%= form_with(model: @tag, local: true) do |f| %>
-<% if @tag.errors.any? %>
-  <div id="error_explanation">
-    <ul>
-      <% @tag.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<div class="tag_new">
+  <div class="tag_form">
+    <%= form_with(model: @tag, local: true) do |f| %>
+    <% if @tag.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+          <% @tag.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-  <div class="tag_name">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+      <div class="tag_name">
+        <%= f.label :タグ名 %><br>
+        <%= f.text_field :name %>
+      </div>
 
-  <%= f.submit %>
-<% end %>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>
