@@ -14,11 +14,12 @@
     <script src="https://kit.fontawesome.com/2fc286bd30.js" crossorigin="anonymous"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Cherry+Swash:700 rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
   </head>
 
   <body>
     <header>
-      <h1><%= link_to "Brain Share", describes_path %></h1>
+      <h1><%= link_to "Share Brain", describes_path %></h1>
 
       <div class="search">
         <%= search_form_for @q do |f| %>
@@ -30,7 +31,7 @@
         <% end %>
       </div>
 
-      <div class="nav">
+      <div class="nav big">
         <% if user_signed_in? %>
           <%= link_to "説明投稿", new_describe_path, class: "left_nav" %>
           <%= link_to "マイページ", my_page_path(id: current_user.id), class: "left_nav" %>
@@ -40,6 +41,30 @@
           <%= link_to "ログイン", new_user_session_path %>
         <% end %>
       </div>
+
+      <i class="fas fa-bars trigger"></i>
+      <div class="nav none small">
+        <ul>
+          <% if user_signed_in? %>
+            <li class="side-nav"><%= link_to "説明投稿", new_describe_path, class: "left_nav" %></li>
+            <li class="side-nav"><%= link_to "マイページ", my_page_path(id: current_user.id), class: "left_nav" %></li>
+            <li class="side-nav"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li class="side-nav"><%= link_to "新規登録", new_user_registration_path, class: "left_nav" %></li>
+            <li class="side-nav"><%= link_to "ログイン", new_user_session_path %></li>
+          <% end %>
+          <li class="side_search">
+            <%= search_form_for @q do |f| %>
+              <%= f.search_field :title_cont, class:"trigger" %>
+
+              <%= button_tag type: "submit", class: "search_icon" do %>
+                <i class="fa fa-search"></i>
+              <% end %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+
     </header>
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>

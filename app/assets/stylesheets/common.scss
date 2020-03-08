@@ -23,10 +23,80 @@ header h1{
   padding-right: 40px;
 }
 .search{
+  display: none;
   position:absolute;
   top: -10px;
   left: 480px;
 }
 input[type="search"] {
   width: 200px;
+}
+.big {
+  // display: none;
+}
+.none{
+  display: none;
+}
+.fa-bars{
+  display: none!important;
+}
+@media screen and (max-width: 479px){
+  .container{
+    // width: 400px;
+  }
+  .row{
+    // width: 400px;
+  }
+  header{
+    width: 400px;
+  }
+  header h1{
+    width: 380px;
+    padding-top: 16px;
+    padding-left: 10px;
+    font-size: 30px;
+  }
+.search{
+  display: none;
+}
+.fa-bars{
+  display: inline!important;
+  position: absolute;
+  top:24px;
+  right: 30px;
+  cursor: pointer;
+}
+.big a{
+  display: none;
+}
+.small{
+  // height: 500px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  background-color: #FFF;
+  border: 1px solid #000;
+  z-index: 1;
+}
+.none{
+  display: none;
+}
+.small ul{
+  // display: none;
+  list-style-type:none;
+  // background-color: #000;
+  margin-top: 40px;
+  margin-left: 20px;
+  padding-left: 10px;
+}
+.small li{
+  margin-bottom: 10px;
+}
+.small .side-nav{
+  margin-left: 100px;
+}
+.small .side_search{
+  margin-top: 40px;
+}
 }

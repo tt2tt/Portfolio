@@ -1,3 +1,9 @@
+<div class="admin_links">
+  <%= link_to "ユーザー一覧", admin_users_path, class: "left_nav" %>
+  <%= link_to "不適切投稿一覧", admin_describes_path, class: "left_nav" %>
+  <%= link_to "カテゴリー作成", new_admin_category_path %>
+</div>
+
 <div class="admin_lnappropriates">
   <% @describes.each do |describe| %>
     <div class="describe_title">

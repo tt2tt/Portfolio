@@ -9,6 +9,28 @@ $(document).on('turbolinks:load', function(){
 });
 
  $(document).bind('turbolinks:load ajax:complete', function() {
+   // sidebar-on
+   $('.fa-bars').click(function(){
+     $('.small').removeClass('none');
+   });
+
+   // sidebar-off
+   $(document).on('click',function(e) {
+   if(!$(e.target).closest('.trigger').length) {
+     $('.small').addClass('none');
+   } else {
+
+   }
+});
+
+   // scroll
+   $('.inside_link').click(function() {
+    var links = $('#links').offset().top;
+
+    $('html, body').animate({scrollTop:links});
+
+});
+
   // set_comment_reply_id
   $(function () {
    $(".click").click( function() {

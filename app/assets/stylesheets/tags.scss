@@ -1,3 +1,36 @@
 // Place all the styles related to the tags controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.tag_new{
+  height: 170px;
+  width: 290px;
+  border: 1px solid #000;
+  margin-top: 80px;
+  margin-left: 400px;
+}
+.tag_form{
+margin-top: 20px;
+margin-left: 60px;
+}
+.tag_new .actions{
+margin-top: 25px;
+margin-left: 40px;
+}
+
+
+@media screen and (max-width: 479px){
+.tag_new{
+margin-top: 80px;
+margin-left: 50px;
+}
+.tag_new label{
+  margin-left: 100px;
+}
+#tag_name{
+  margin-left: 47px;
+}
+.tag_new .actions{
+  margin-left: 90px;
+}
+}

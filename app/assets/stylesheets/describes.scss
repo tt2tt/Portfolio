@@ -22,6 +22,35 @@
   width: 700px;
 }
 
+@media screen and (max-width: 479px){
+.form{
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.title_form{
+  // width: 300px;
+}
+.form input[type="text"] {
+  width: 360px;
+  height: 40px;
+}
+.form #describe_content {
+  width: 360px;
+  height: 200px;
+}
+.category_form{
+  width: 340px;
+  margin-left: 10px;
+}
+.tag_form{
+  margin-left: 10px!important;
+}
+.form input[type="submit"] {
+
+  width: 300px;
+}
+}
+
 // index
 .index{
   margin-top: 20px;
@@ -67,6 +96,21 @@
   padding: 0 5px;
 }
 
+@media screen and (max-width: 479px){
+.index{
+  width: 400px;
+  margin-left: 0px;
+}
+.index .contribution{
+width: 340px;
+}
+.index .contribution p{
+  width: 300px;
+}
+.index .pages{
+  margin-left: 140px;
+}
+}
 // show
 .show{
   margin-top: 50px;
@@ -146,6 +190,71 @@
 .show .page{
   padding: 0 5px;
 }
+.lnappropriates{
+  margin-left: 700px;
+}
+.lnappropriates a{
+  border: 1px solid #000;
+  color: #008000;
+  text-decoration: none;
+  background-color: #FFF;
+}
+
+
+@media screen and (max-width: 479px){
+.show{
+  margin-top: 30px;
+  margin-left: 20px;
+  width: 320px;
+  border: 1px solid #000;
+  background-image: image-url('height.jpg');
+  position: absolute;
+}
+.show h1{
+  width: 275px;
+  margin-left: 20px;
+}
+.show .main{
+  width: 275px;
+  margin-left: 20px;
+}
+.lnappropriates{
+  margin-left: 220px;
+}
+.show .pages{
+  width: 200px;
+  margin-left: 45px;
+}
+#comments_area{
+  width: 275px;
+  margin-left: 20px;
+}
+.show .field{
+  margin-left: 4px;
+}
+.show textarea{
+  margin-left: 6px;
+  width: 275px;
+}
+#like_area{
+  font-size: 10px;
+  top: 30px;
+  left: 350px;
+}
+#comment_submit{
+  margin-left: 50px;
+}
+.links{
+  top: 30px;
+  left: 345px;
+}
+.links p{
+  margin-bottom: 4px;
+}
+.links a{
+  font-size: 12px;
+}
+}
 
 // contribution
 .my_index{
@@ -201,4 +310,19 @@
 .my_serach input[type="search"] {
   margin-top: 30px;
   margin-left: 20px;
+}
+
+@media screen and (max-width: 479px){
+.my_index{
+  width: 380px;
+}
+.my_index p{
+  // width: 300px;
+}
+.my_index a{
+  // width: 300px;
+}
+.my_serach{
+  display: none
+}
 }

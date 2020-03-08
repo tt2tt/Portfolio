@@ -1,0 +1,19 @@
+// Place all the styles related to the admin::categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.category_new{
+  height: 170px;
+  width: 290px;
+  border: 1px solid #000;
+  margin-top: 120px;
+  margin-left: -360px;
+}
+.category_form{
+  margin-top: 20px;
+  margin-left: 60px;
+}
+.category_new .actions{
+  margin-top: 25px;
+  margin-left: 40px;
+}
