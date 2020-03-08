@@ -17,3 +17,20 @@ margin-left: 60px;
 margin-top: 25px;
 margin-left: 40px;
 }
+
+
+@media screen and (max-width: 479px){
+.tag_new{
+margin-top: 80px;
+margin-left: 50px;
+}
+.tag_new label{
+  margin-left: 100px;
+}
+#tag_name{
+  margin-left: 47px;
+}
+.tag_new .actions{
+  margin-left: 90px;
+}
+}

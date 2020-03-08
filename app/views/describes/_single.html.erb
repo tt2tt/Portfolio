@@ -29,9 +29,9 @@
 <div class="links">
   <% if user_signed_in? %>
     <% if current_user.id == @describe.user_id %>
-      <p><%= link_to "説明を更新する", new_describe_path(original: @describe), class: 'btn btn-info' %></p>
-      <%= link_to '編集', edit_describe_path(@describe), class: 'btn btn-success' %>&nbsp;&nbsp;&nbsp;
-      <%= link_to '削除', @describe, method: :delete, data: { confirm: '本当に削除しますか' }, class: 'btn btn-danger' %>
+      <p><%= link_to "更新", new_describe_path(original: @describe), class: 'btn btn-info' %></p>
+      <p><%= link_to '編集', edit_describe_path(@describe), class: 'btn btn-success' %></p>
+      <p><%= link_to '削除', @describe, method: :delete, data: { confirm: '本当に削除しますか' }, class: 'btn btn-danger' %></p>
     <% end %>
   <% end %>
 </div>

@@ -19,6 +19,12 @@
   margin-left: 25px;
 }
 
+@media screen and (max-width: 479px){
+.sign_up{
+  margin-left: 50px;
+}
+}
+
 // password_reset
 .password_reset{
   height: 350px;
@@ -30,6 +36,12 @@
 .reset_form{
   margin-top: 20px;
   margin-left: 60px;
+}
+
+@media screen and (max-width: 479px){
+.password_reset{
+  margin-left: 50px;
+}
 }
 
 // change_password
@@ -47,10 +59,18 @@
 .change_password .actions{
   margin-top: 25px;
 }
+
+@media screen and (max-width: 479px){
+.change_password{
+  margin-left: 50px;
+}
+}
+
+
 // my_page
 .my_page{
 width: 600px;
-height: 500px;
+height: 560px;
 border: 1px solid #000;
 margin-top: 70px;
 margin-left: 270px;
@@ -73,18 +93,46 @@ position: relative;
   top: -350px;
   left: 370px;
 }
+.user_profile_image{
+  margin-bottom: 10px;
+}
 .user_name{
   display: inline-block;
-  padding-left: 30px;
+  padding-left: 80px;
   padding-bottom: 10px;
 }
 .user_email{
   display: inline-block;
-  padding-left: 30px;
+  padding-left: 80px;
   padding-bottom: 20px;
 }
 .my_page input[type="submit"] {
   margin-left: 130px;
+}
+
+@media screen and (max-width: 479px){
+.my_page{
+  width: 370px;
+  height: 500px;
+  margin-left: 10px;
+}
+.my_page img{
+  height: 150px;
+  width: 150px;
+}
+.my_page .my_page_links{
+  top: -410px;
+  left: 210px;
+}
+.user_name{
+  padding-left: 40px;
+}
+.user_email{
+  padding-left: 40px;
+}
+.my_page input[type="submit"] {
+  margin-left: 80px;
+}
 }
 
 // password_edit
@@ -116,6 +164,12 @@ position: relative;
   margin-bottom: 10px;
 }
 
+@media screen and (max-width: 479px){
+.edit_password{
+  margin-left: 20px;
+}
+}
+
 // password_new
 .password_reset{
   height: 200px;
@@ -127,4 +181,10 @@ position: relative;
 }
 .password_reset .actions input[type="submit"] {
   margin-left: -30px;
+}
+
+@media screen and (max-width: 479px){
+.password_reset{
+  margin-left: 50px;
+}
 }

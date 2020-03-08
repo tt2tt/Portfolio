@@ -114,3 +114,94 @@
   margin-top: 40px;
   margin-left: 590px;
 }
+
+// smartphone
+// top
+@media screen and (max-width: 479px) {
+.top{
+  height: 1500px;
+  width: 480px;
+}
+.title{
+  height: 300px;
+}
+.title h1{
+  font-size: 30px;
+  padding-top: 45px;
+  padding-left: 60px;
+}
+.catch{
+  padding-top: 14px;
+  padding-left: 76px;
+}
+.catch h2{
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.top_nav{
+  margin-top: 10px;
+  margin-left: 84px;
+}
+.top_nav a{
+  font-size: 6px;
+  padding: 1px 2px;
+}
+.title .left_nav{
+  margin-right: 0px;
+  padding-right: 2px;
+}
+.arrow{
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border: 5px solid;
+  border-color:  transparent transparent #fff #fff;
+  transform: rotate(-45deg);
+}
+.left_arrow{
+  margin-left: 30px;
+}
+.middle_arrow{
+  margin-left: 175px;
+}
+.right_arrow{
+  margin-left: 200px;
+}
+.app_describe{
+  // display: none;
+}
+.caption{
+  font-size: 12px;
+  padding-top: 40px;
+  // margin-top: 0px;
+}
+.describe{
+  height: 200px;
+  width: 330px;
+  margin-top: 50px;
+  margin-left: 75px;
+}
+.like{
+  height: 200px;
+  width: 330px;
+  margin-top: 50px;
+  margin-left: 75px;
+}
+.grow{
+  height: 200px;
+  width: 330px;
+  margin-top: 50px;
+  margin-left: 75px;
+}
+.question{
+  height: 200px;
+  width: 330px;
+  margin-top: 50px;
+  margin-left: 75px;
+}
+.inside_link{
+  font-size: 20px;
+  margin-top: 40px;
+  margin-left: 180px;
+}
+}
