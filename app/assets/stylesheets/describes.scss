@@ -31,18 +31,19 @@
   // width: 300px;
 }
 .form input[type="text"] {
-  width: 360px;
+  width: 320px;
   height: 40px;
 }
 .form #describe_content {
-  width: 360px;
+  width: 320px;
   height: 200px;
 }
 .category_form{
-  width: 340px;
+  width: 290px;
   margin-left: 10px;
 }
 .tag_form{
+  width: 290px;
   margin-left: 10px!important;
 }
 .form input[type="submit"] {
@@ -80,6 +81,16 @@
   word-wrap: break-word;
   margin-left: 10px;
   margin-bottom: 0;
+}
+.index span{
+  // margin-left: 10px;
+}
+.index .category{
+  margin-left: 10px;
+  background-color: #CBFFD3;
+}
+.index .tag{
+  background-color: #CCFFFF;
 }
 .index img{
   width: 30px;
@@ -204,19 +215,19 @@ width: 340px;
 @media screen and (max-width: 479px){
 .show{
   margin-top: 30px;
-  margin-left: 20px;
-  width: 320px;
+  margin-left: 10px;
+  width: 300px;
   border: 1px solid #000;
   background-image: image-url('height.jpg');
   position: absolute;
 }
 .show h1{
   width: 275px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .show .main{
   width: 275px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .lnappropriates{
   margin-left: 220px;
@@ -227,7 +238,10 @@ width: 340px;
 }
 #comments_area{
   width: 275px;
-  margin-left: 20px;
+  margin-left: 10px;
+}
+#comment_form{
+  margin-left: 0px;
 }
 .show .field{
   margin-left: 4px;
@@ -246,7 +260,10 @@ width: 340px;
 }
 .links{
   top: 30px;
-  left: 345px;
+  left: 316px;
+}
+.links .btn{
+  padding: 3px 6px;
 }
 .links p{
   margin-bottom: 4px;
@@ -314,7 +331,7 @@ width: 340px;
 
 @media screen and (max-width: 479px){
 .my_index{
-  width: 380px;
+  width: 360px;
 }
 .my_index p{
   // width: 300px;
