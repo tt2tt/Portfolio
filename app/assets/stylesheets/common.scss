@@ -23,16 +23,12 @@ header h1{
   padding-right: 40px;
 }
 .search{
-  display: none;
   position:absolute;
   top: -10px;
   left: 480px;
 }
 input[type="search"] {
   width: 200px;
-}
-.big {
-  // display: none;
 }
 .none{
   display: none;
@@ -41,12 +37,6 @@ input[type="search"] {
   display: none!important;
 }
 @media screen and (max-width: 479px){
-  .container{
-    // width: 400px;
-  }
-  .row{
-    // width: 400px;
-  }
   header{
     width: 360px;
   }
@@ -70,7 +60,6 @@ input[type="search"] {
   display: none;
 }
 .small{
-  // height: 500px;
   position: absolute;
   top: 0px;
   right: 0px;
@@ -83,9 +72,7 @@ input[type="search"] {
   display: none;
 }
 .small ul{
-  // display: none;
   list-style-type:none;
-  // background-color: #000;
   margin-top: 40px;
   margin-left: 20px;
   padding-left: 10px;
@@ -114,5 +101,13 @@ header h1{
 }
 .left_nav{
   padding-right: 20px;
+}
+.search{
+  position:absolute;
+  top: -10px;
+  left: 220px;
+}
+input[type="search"] {
+  width: 160px;
 }
 }

@@ -30,9 +30,6 @@
 .form p{
   width: 330px;
 }
-.title_form{
-  // width: 300px;
-}
 .form input[type="text"] {
   width: 320px;
   height: 40px;
@@ -91,9 +88,6 @@
   margin-left: 10px;
   margin-bottom: 0;
 }
-.index span{
-  // margin-left: 10px;
-}
 .index .category{
   margin-left: 10px;
   background-color: #CBFFD3;
@@ -134,7 +128,6 @@ width: 340px;
 
 @media screen and (min-width:768px) and ( max-width:1024px){
 .index{
-  // width: 400px;
   margin-left: 0px;
 }
 }
@@ -401,12 +394,6 @@ width: 340px;
 @media screen and (max-width: 479px){
 .my_index{
   width: 360px;
-}
-.my_index p{
-  // width: 300px;
-}
-.my_index a{
-  // width: 300px;
 }
 .my_serach{
   display: none
