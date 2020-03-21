@@ -23,11 +23,17 @@
 .sign_up{
   margin-left: 30px;
 }
+.sign_up_form{
+  margin-left: 40px;
+}
 }
 
 @media screen and (min-width:768px) and ( max-width:1024px){
 .sign_up{
   margin-left: 220px;
+}
+.sign_up_form{
+  margin-left: 40px;
 }
 }
 
@@ -48,11 +54,17 @@
 .password_reset{
   margin-left: 30px;
 }
+.reset_form{
+  margin-left: 40px;
+}
 }
 
 @media screen and (min-width:768px) and ( max-width:1024px){
 .password_reset{
   margin-left: 220px;
+}
+.reset_form{
+  margin-left: 40px;
 }
 }
 
@@ -76,11 +88,17 @@
 .change_password{
   margin-left: 30px;
 }
+.change_form{
+  margin-left: 40px;
+}
 }
 
 @media screen and (min-width:768px) and ( max-width:1024px){
 .change_password{
   margin-left: 220px;
+}
+.change_form{
+  margin-left: 40px;
 }
 }
 
@@ -139,8 +157,12 @@ position: relative;
   margin-left: 30px;
 }
 .my_page .my_page_links{
+  width: 100px;
   top: -410px;
   left: 200px;
+}
+.my_page .my_page_links p{
+  width: 130px;
 }
 .user_name{
   padding-left: 30px;
@@ -160,6 +182,7 @@ position: relative;
   margin-left: 60px;
 }
 .my_page .my_page_links{
+  width: 100px;
   top: -410px;
   left: 400px;
 }
@@ -202,6 +225,21 @@ position: relative;
   width: 320px;
 }
 .password_form .field{
+  margin-left: 52px;
+}
+.password_form .actions{
+  margin-left: 48px;
+}
+.password_form .back{
+  margin-left: 115px;
+}
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px){
+.edit_password{
+  margin-left: 220px;
+}
+.password_form .field{
   margin-left: 72px;
 }
 .password_form .actions{
@@ -210,11 +248,14 @@ position: relative;
 .password_form .back{
   margin-left: 135px;
 }
+.password_form .field{
+  margin-left: 52px;
 }
-
-@media screen and (min-width:768px) and ( max-width:1024px){
-.edit_password{
-  margin-left: 220px;
+.password_form .actions{
+  margin-left: 48px;
+}
+.password_form .back{
+  margin-left: 115px;
 }
 }
 

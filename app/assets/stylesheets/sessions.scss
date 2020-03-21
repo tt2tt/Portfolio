@@ -19,10 +19,16 @@
 .login{
   margin-left: 30px;
 }
+.login_form{
+  margin-left: 40px;
+}
 }
 
 @media screen and (min-width:768px) and ( max-width:1024px){
 .login{
   margin-left: 220px;
+}
+.login_form{
+  margin-left: 40px;
 }
 }
