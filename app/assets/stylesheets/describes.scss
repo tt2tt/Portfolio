@@ -47,8 +47,14 @@
   margin-left: 10px!important;
 }
 .form input[type="submit"] {
-
   width: 300px;
+}
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px){
+.form{
+  margin-top: 20px;
+  margin-left: 10px;
 }
 }
 
@@ -122,6 +128,14 @@ width: 340px;
   margin-left: 140px;
 }
 }
+
+@media screen and (min-width:768px) and ( max-width:1024px){
+.index{
+  // width: 400px;
+  margin-left: 0px;
+}
+}
+
 // show
 .show{
   margin-top: 50px;
@@ -211,7 +225,6 @@ width: 340px;
   background-color: #FFF;
 }
 
-
 @media screen and (max-width: 479px){
 .show{
   margin-top: 30px;
@@ -270,6 +283,49 @@ width: 340px;
 }
 .links a{
   font-size: 12px;
+}
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px){
+.show{
+  margin-top: 30px;
+  margin-left: 10px;
+  width: 600px;
+  border: 1px solid #000;
+  background-image: image-url('height.jpg');
+  position: absolute;
+}
+.show h1{
+  width: 550px;
+  margin-left: 20px;
+}
+.show .main{
+  width: 550px;
+  margin-left: 20px;
+}
+.lnappropriates{
+  margin-left: 480px;
+}
+.show .pages{
+  width: 200px;
+  margin-left: 200px;
+}
+#comments_area{
+  width: 550px;
+  margin-left: 20px;
+}
+#comment_form{
+  margin-left: 0px;
+}
+.show .field{
+  margin-left: 100px;
+}
+#comment_submit{
+  margin-left: 200px;
+}
+.links{
+  top: 30px;
+  left: 636px;
 }
 }
 
@@ -339,6 +395,12 @@ width: 340px;
 .my_index a{
   // width: 300px;
 }
+.my_serach{
+  display: none
+}
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px){
 .my_serach{
   display: none
 }

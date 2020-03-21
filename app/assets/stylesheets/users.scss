@@ -25,6 +25,12 @@
 }
 }
 
+@media screen and (min-width:768px) and ( max-width:1024px){
+.sign_up{
+  margin-left: 220px;
+}
+}
+
 // password_reset
 .password_reset{
   height: 350px;
@@ -41,6 +47,12 @@
 @media screen and (max-width: 479px){
 .password_reset{
   margin-left: 30px;
+}
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px){
+.password_reset{
+  margin-left: 220px;
 }
 }
 
@@ -66,6 +78,11 @@
 }
 }
 
+@media screen and (min-width:768px) and ( max-width:1024px){
+.change_password{
+  margin-left: 220px;
+}
+}
 
 // my_page
 .my_page{
@@ -136,6 +153,18 @@ position: relative;
 }
 }
 
+@media screen and (min-width:768px) and ( max-width:1024px){
+.my_page{
+  // width: 340px;
+  // height: 500px;
+  margin-left: 60px;
+}
+.my_page .my_page_links{
+  top: -410px;
+  left: 400px;
+}
+}
+
 // password_edit
 .edit_password{
   margin-top: 50px;
@@ -183,6 +212,12 @@ position: relative;
 }
 }
 
+@media screen and (min-width:768px) and ( max-width:1024px){
+.edit_password{
+  margin-left: 220px;
+}
+}
+
 // password_new
 .password_reset{
   height: 200px;
@@ -199,5 +234,11 @@ position: relative;
 @media screen and (max-width: 479px){
 .password_reset{
   margin-left: 30px;
+}
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px){
+.password_reset{
+  margin-left: 220px;
 }
 }
