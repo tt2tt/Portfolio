@@ -27,6 +27,9 @@
   margin-top: 20px;
   margin-left: 20px;
 }
+.form p{
+  width: 330px;
+}
 .title_form{
   // width: 300px;
 }
@@ -238,6 +241,16 @@ width: 340px;
   width: 275px;
   margin-left: 10px;
 }
+.show .slider{
+  padding-left: 10px;
+}
+.show .slider img{
+ width: 260px!important;
+ height: 200px;
+}
+.slick-prev {
+    z-index: 1;
+}
 .show .main{
   width: 275px;
   margin-left: 10px;
@@ -266,7 +279,7 @@ width: 340px;
 #like_area{
   font-size: 10px;
   top: 30px;
-  left: 350px;
+  left: 320px;
 }
 #comment_submit{
   margin-left: 50px;
