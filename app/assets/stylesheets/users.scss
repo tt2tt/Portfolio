@@ -21,7 +21,13 @@
 
 @media screen and (max-width: 479px){
 .sign_up{
-  margin-left: 50px;
+  margin-left: 30px;
+}
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px){
+.sign_up{
+  margin-left: 220px;
 }
 }
 
@@ -40,7 +46,13 @@
 
 @media screen and (max-width: 479px){
 .password_reset{
-  margin-left: 50px;
+  margin-left: 30px;
+}
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px){
+.password_reset{
+  margin-left: 220px;
 }
 }
 
@@ -62,10 +74,15 @@
 
 @media screen and (max-width: 479px){
 .change_password{
-  margin-left: 50px;
+  margin-left: 30px;
 }
 }
 
+@media screen and (min-width:768px) and ( max-width:1024px){
+.change_password{
+  margin-left: 220px;
+}
+}
 
 // my_page
 .my_page{
@@ -112,26 +129,39 @@ position: relative;
 
 @media screen and (max-width: 479px){
 .my_page{
-  width: 370px;
+  width: 340px;
   height: 500px;
   margin-left: 10px;
 }
 .my_page img{
-  height: 150px;
-  width: 150px;
+  height: 130px;
+  width: 130px;
+  margin-left: 30px;
 }
 .my_page .my_page_links{
   top: -410px;
-  left: 210px;
+  left: 200px;
 }
 .user_name{
-  padding-left: 40px;
+  padding-left: 30px;
 }
 .user_email{
-  padding-left: 40px;
+  padding-left: 30px;
 }
 .my_page input[type="submit"] {
-  margin-left: 80px;
+  margin-left: 70px;
+}
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px){
+.my_page{
+  // width: 340px;
+  // height: 500px;
+  margin-left: 60px;
+}
+.my_page .my_page_links{
+  top: -410px;
+  left: 400px;
 }
 }
 
@@ -168,6 +198,24 @@ position: relative;
 .edit_password{
   margin-left: 20px;
 }
+.password_form{
+  width: 320px;
+}
+.password_form .field{
+  margin-left: 72px;
+}
+.password_form .actions{
+  margin-left: 68px;
+}
+.password_form .back{
+  margin-left: 135px;
+}
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px){
+.edit_password{
+  margin-left: 220px;
+}
 }
 
 // password_new
@@ -185,6 +233,12 @@ position: relative;
 
 @media screen and (max-width: 479px){
 .password_reset{
-  margin-left: 50px;
+  margin-left: 30px;
+}
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px){
+.password_reset{
+  margin-left: 220px;
 }
 }

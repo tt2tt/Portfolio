@@ -7,20 +7,16 @@
          <%= describe.user.name %>
          <i class="fas fa-heart" style="color:red"></i> <%= describe.likes_count %>
        </p>
-       <p>
-         <% if describe.categories[0] %>
-           <% describe.categories.each do |category| %>
-             <%= category.name %>
-           <% end %>
+        <% if describe.categories[0] %>
+         <% describe.categories.each do |category| %>
+           <span class="category"><%= category.name %></span>
          <% end %>
-       </p>
-       <p>
-         <% if describe.tags[0] %>
-           <% describe.tags.each do |tag| %>
-             <%= tag.name %>
-           <% end %>
+        <% end %>
+        <% if describe.tags[0] %>
+         <% describe.tags.each do |tag| %>
+           <span class="tag"><%= tag.name %></span>
          <% end %>
-       </p>
+        <% end %>
        <p>
          <%= describe.title %>
        </p>

@@ -31,23 +31,30 @@
   // width: 300px;
 }
 .form input[type="text"] {
-  width: 360px;
+  width: 320px;
   height: 40px;
 }
 .form #describe_content {
-  width: 360px;
+  width: 320px;
   height: 200px;
 }
 .category_form{
-  width: 340px;
+  width: 290px;
   margin-left: 10px;
 }
 .tag_form{
+  width: 290px;
   margin-left: 10px!important;
 }
 .form input[type="submit"] {
-
   width: 300px;
+}
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px){
+.form{
+  margin-top: 20px;
+  margin-left: 10px;
 }
 }
 
@@ -81,6 +88,16 @@
   margin-left: 10px;
   margin-bottom: 0;
 }
+.index span{
+  // margin-left: 10px;
+}
+.index .category{
+  margin-left: 10px;
+  background-color: #CBFFD3;
+}
+.index .tag{
+  background-color: #CCFFFF;
+}
 .index img{
   width: 30px;
   height: 30px;
@@ -111,6 +128,14 @@ width: 340px;
   margin-left: 140px;
 }
 }
+
+@media screen and (min-width:768px) and ( max-width:1024px){
+.index{
+  // width: 400px;
+  margin-left: 0px;
+}
+}
+
 // show
 .show{
   margin-top: 50px;
@@ -200,23 +225,22 @@ width: 340px;
   background-color: #FFF;
 }
 
-
 @media screen and (max-width: 479px){
 .show{
   margin-top: 30px;
-  margin-left: 20px;
-  width: 320px;
+  margin-left: 10px;
+  width: 300px;
   border: 1px solid #000;
   background-image: image-url('height.jpg');
   position: absolute;
 }
 .show h1{
   width: 275px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .show .main{
   width: 275px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .lnappropriates{
   margin-left: 220px;
@@ -227,7 +251,10 @@ width: 340px;
 }
 #comments_area{
   width: 275px;
-  margin-left: 20px;
+  margin-left: 10px;
+}
+#comment_form{
+  margin-left: 0px;
 }
 .show .field{
   margin-left: 4px;
@@ -246,13 +273,59 @@ width: 340px;
 }
 .links{
   top: 30px;
-  left: 345px;
+  left: 316px;
+}
+.links .btn{
+  padding: 3px 6px;
 }
 .links p{
   margin-bottom: 4px;
 }
 .links a{
   font-size: 12px;
+}
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px){
+.show{
+  margin-top: 30px;
+  margin-left: 10px;
+  width: 600px;
+  border: 1px solid #000;
+  background-image: image-url('height.jpg');
+  position: absolute;
+}
+.show h1{
+  width: 550px;
+  margin-left: 20px;
+}
+.show .main{
+  width: 550px;
+  margin-left: 20px;
+}
+.lnappropriates{
+  margin-left: 480px;
+}
+.show .pages{
+  width: 200px;
+  margin-left: 200px;
+}
+#comments_area{
+  width: 550px;
+  margin-left: 20px;
+}
+#comment_form{
+  margin-left: 0px;
+}
+.show .field{
+  margin-left: 100px;
+}
+#comment_submit{
+  margin-left: 200px;
+}
+.links{
+  top: 30px;
+  left: 636px;
 }
 }
 
@@ -314,7 +387,7 @@ width: 340px;
 
 @media screen and (max-width: 479px){
 .my_index{
-  width: 380px;
+  width: 360px;
 }
 .my_index p{
   // width: 300px;
@@ -322,6 +395,12 @@ width: 340px;
 .my_index a{
   // width: 300px;
 }
+.my_serach{
+  display: none
+}
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px){
 .my_serach{
   display: none
 }
