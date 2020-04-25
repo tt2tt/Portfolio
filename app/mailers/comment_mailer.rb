@@ -1,8 +1,8 @@
 class CommentMailer < ApplicationMailer
 
-  def comment_mail(mail, comment)
+  def comment_mail(mail, describe)
     @mail = mail
-    @comment = comment
+    @describe = describe
 
     mail to: "#{@mail}", subject: "あなたの投稿にコメントがありました。"
   end

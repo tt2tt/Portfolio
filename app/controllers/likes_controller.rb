@@ -3,6 +3,9 @@ class LikesController < ApplicationController
     if user_signed_in?
       if @like = current_user.likes.create(describe_id: params[:describe_id])
         @describe = Describe.find(params[:describe_id])
+        if @describe.user.receive == true
+          LikeMailer.like_mail(@describe.user.email, @describe.title).deliver
+        end
         respond_to do |format|
           format.html { redirect_to describe_path(@describe)}
           format.js { render :like }
