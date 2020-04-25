@@ -108,7 +108,7 @@
 // my_page
 .my_page{
 width: 600px;
-height: 560px;
+height: 620px;
 border: 1px solid #000;
 margin-top: 70px;
 margin-left: 270px;
@@ -128,7 +128,7 @@ position: relative;
 }
 .my_page .my_page_links{
   position: relative;
-  top: -350px;
+  top: -400px;
   left: 370px;
 }
 .user_profile_image{
@@ -141,6 +141,11 @@ position: relative;
 }
 .user_email{
   display: inline-block;
+  padding-left: 80px;
+  padding-bottom: 20px;
+}
+.user_receive{
+  // display: inline-block;
   padding-left: 80px;
   padding-bottom: 20px;
 }
@@ -171,6 +176,9 @@ position: relative;
   padding-left: 30px;
 }
 .user_email{
+  padding-left: 30px;
+}
+.user_receive{
   padding-left: 30px;
 }
 .my_page input[type="submit"] {

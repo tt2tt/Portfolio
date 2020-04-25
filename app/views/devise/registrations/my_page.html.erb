@@ -17,6 +17,11 @@
           <%= f.text_field :email %>
         </div>
 
+        <div class="user_receive">
+          <%= f.label :receive %><br>
+          <%= f.check_box :receive %>
+        </div>
+
         <p class="user_form_submit"><%= f.submit %></p>
       <% end %>
     </div>

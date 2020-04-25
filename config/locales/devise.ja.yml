@@ -8,6 +8,7 @@ ja:
         name: "ユーザーネーム"
         email: "メールアドレス"
         content: "内容"
+        receive: "通知の受け取り"
         current_password: "現在のパスワード"
         password: "パスワード"
         password_confirmation: "確認用パスワード"
