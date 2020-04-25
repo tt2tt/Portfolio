@@ -18,6 +18,7 @@ gem 'fog-aws'
 gem 'dotenv-rails'
 gem 'unicorn'
 gem 'aws-ses'
+gem 'delayed_job_active_record'
 gem 'mini_racer', platforms: :ruby
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

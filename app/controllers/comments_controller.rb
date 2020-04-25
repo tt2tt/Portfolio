@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
           format.html { redirect_to describe_path(@describe)}
           format.js { render :index }
           if @describe.user.receive == true
-            CommentMailer.comment_mail(@describe.user.email, @describe.title).deliver
+            CommentMailer.comment_mail(@describe.user.email, @describe.title).deliver_later
           end
         else
           format.html { redirect_to describe_path(@describes), notice: '投稿できませんでした' }
