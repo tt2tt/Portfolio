@@ -2,7 +2,7 @@ class DescribesController < ApplicationController
   before_action :set_id, only:  [:show, :edit, :update, :destroy]
 
   def index
-    @describes = @q.result.original_describe.latest.page(params[:page]).per(10)
+    @describes = @q.result.original_describe.likes_count.page(params[:page]).per(10)
   end
 
   def new

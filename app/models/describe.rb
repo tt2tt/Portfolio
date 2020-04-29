@@ -19,7 +19,7 @@ class Describe < ApplicationRecord
   end
 
   scope :original_describe, -> {where(original_id: nil)}
-  scope :latest, -> {order(updated_at: :desc)}
+  scope :likes_count, -> {order(likes_count: :desc)}
 
   private
 
