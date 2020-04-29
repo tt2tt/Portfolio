@@ -17,4 +17,11 @@
     <% end %>
     <%= link_to "パスワードを忘れた場合", new_user_password_path %>
   </div>
+  <div class="test_login">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= f.hidden_field :email, value: 'test@test.com' %>
+      <%= f.hidden_field :password, value: 'testtest' %>
+      <%= f.submit 'テストユーザーログイン', class: 'btn btn-default' %>
+    <% end %>
+  </div>
 </div>
