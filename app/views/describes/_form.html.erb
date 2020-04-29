@@ -29,15 +29,23 @@
     </p>
 
     <p class="content_form">
-      <%= f.text_area :content, placeholder: "内容" %>
+      <% if @original %>
+        <%= f.text_area :content, value: "#{@original.content}", placeholder: "内容" %>
+      <% else %>
+        <%= f.text_area :content, placeholder: "内容" %>
+      <% end %>
     </p>
 
     <p class="category_form">
-      <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
+      <% unless @original %>
+        <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
+      <% end %>
     </p>
 
     <p class="tag_form">
-      <%= f.collection_check_boxes(:tag_ids, current_user.tags, :id, :name) %>
+      <% unless @original %>
+        <%= f.collection_check_boxes(:tag_ids, current_user.tags, :id, :name) %>
+      <% end %>
     </p>
 
     <p class="image_form">
