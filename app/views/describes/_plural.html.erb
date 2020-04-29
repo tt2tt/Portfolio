@@ -9,7 +9,7 @@
       <% end %>
     </ul>
 
-    <p class="main"> <%= describe.content %></p>
+    <p class="main"><%= safe_join("#{describe.content}".split("\n"),tag(:br)) %></p>
 
     <div class="lnappropriates">
       <% if describe.lnappropriates[0] == nil %>
