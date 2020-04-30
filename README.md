@@ -14,7 +14,7 @@
   - Route53
   - Certificate Manager
 
-# Brain Share （説明共有アプリ）
+# Share Brain （説明共有アプリ）
 
 # URL
 
